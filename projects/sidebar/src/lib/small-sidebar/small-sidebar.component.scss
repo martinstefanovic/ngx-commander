@@ -1,0 +1,35 @@
+.ngxCommander-small-sidebar {
+  width: 55px;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  .item {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ngx-commander-small-sidebar-background);
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    outline: 2px solid transparent;
+    transition: all 0.2s;
+    span {
+      font-size: 0.8rem !important;
+    }
+    &:hover {
+      color: var(--ngx-commander-small-sidebar-active-text);
+      background-color: var(--ngx-commander-small-sidebar-background);
+    }
+    &.active {
+      color: var(--ngx-commander-small-sidebar-active-text);
+      outline: 2px solid var(--ngx-commander-small-sidebar-active-border);
+    }
+  }
+}

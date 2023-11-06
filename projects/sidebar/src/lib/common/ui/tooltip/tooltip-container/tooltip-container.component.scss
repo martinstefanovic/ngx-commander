@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  max-width: 12rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: #fff;
+  background: #000;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  margin-left: 0.3rem;
+}
+
+:host-context(.top) {
+  margin-bottom: 0.5rem;
+}
+
+:host-context(.bottom) {
+  margin-top: 0.5rem;
+}

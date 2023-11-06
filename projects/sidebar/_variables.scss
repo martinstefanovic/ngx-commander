@@ -1,0 +1,13 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+:root {
+  --ngx-commander-small-sidebar-active-text: #215bde;
+  --ngx-commander-small-sidebar-text: black;
+  --ngx-commander-small-sidebar-active-background: #eaeaea;
+  --ngx-commander-small-sidebar-background: #eaeaea;
+  --ngx-commander-small-sidebar-active-border: #215bde;
+  --ngx-commander-small-sidebar-font: 'Open Sans', sans-serif;
+}
+* {
+  font-family: var(--ngx-commander-small-sidebar-font);
+}
