@@ -8,7 +8,7 @@
     [ngClass]="{ 'sidebar-in-progress': item.progress }"
   >
     <!-- (click)="innerWidth < 500 ? collapseMenu() : null" -->
-    <ng-icon class="icon" [name]="item.icon"></ng-icon>
+    <ng-icon size="15" class="icon" [name]="item.icon"></ng-icon>
     <span class="item-title"> {{ item.title }} </span>
   </div>
 </ng-container>

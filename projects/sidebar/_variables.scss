@@ -17,6 +17,9 @@
   --ngx-commander-large-sidebar-item-background: #fff;
   --ngx-commander-large-sidebar-font: 'Open Sans', sans-serif;
 }
+:root {
+  --ngx-commander-large-sidebar-menu-btn-color: #215bde;
+}
 * {
   font-family: var(--ngx-commander-small-sidebar-font);
 }

@@ -1,9 +1,9 @@
-<main class="responsive-container" [class.hidden]="mobileIsSidebarClosed">
-  <div class="content">
+<main class="CMND-responsive-container" [class.CMND-hidden]="mobileIsSidebarClosed">
+  <div class="CMND-content">
     <ng-content />
   </div>
-  <div class="backdrop" (click)="mobileIsSidebarClosed = !mobileIsSidebarClosed"></div>
+  <div class="CMND-backdrop" (click)="mobileIsSidebarClosed = !mobileIsSidebarClosed"></div>
 </main>
-<button class="mobile-sidebar-btn" (click)="mobileIsSidebarClosed = !mobileIsSidebarClosed">
+<button class="CMND-mobile-sidebar-btn" (click)="mobileIsSidebarClosed = !mobileIsSidebarClosed">
   <ng-icon class="icon" size="20" [name]="burgerIcon"></ng-icon>
 </button>

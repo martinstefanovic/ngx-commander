@@ -7,8 +7,7 @@
       [class.closed-sidebar]="isSidebarClosed"
       (click)="isDropdownOpen = !isDropdownOpen"
     >
-      <ng-icon class="icon" [name]="item.icon"></ng-icon>
-      <!-- <i [class]="item.icon"></i> -->
+      <ng-icon size="15" class="icon" [name]="item.icon"></ng-icon>
       <p>{{ item.title }}</p>
       <ng-container *ngIf="isDropdownOpen; else iconUp">
         <ng-icon *ngIf="!isSidebarClosed" class="sidebar-dropdown-icon" name="heroChevronUp"></ng-icon>
@@ -33,7 +32,7 @@
             <span *ngIf="!isSidebarClosed">
               {{ subItem.title }}
             </span>
-            <ng-icon *ngIf="isSidebarClosed" [name]="subItem.icon"></ng-icon>
+            <ng-icon size="15" *ngIf="isSidebarClosed" [name]="subItem.icon"></ng-icon>
           </div>
         </ng-container>
       </ng-container>
