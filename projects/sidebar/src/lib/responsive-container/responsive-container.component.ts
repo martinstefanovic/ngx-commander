@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./responsive-container.component.scss'],
 })
 export class ResponsiveContainerComponent {
-  @Input() burgerIcon = 'heroBars4';
+  @Input() mobileMenuIcon = 'heroBars4';
   mobileIsSidebarClosed = false;
   isMobile = window.innerWidth < 550;
 }

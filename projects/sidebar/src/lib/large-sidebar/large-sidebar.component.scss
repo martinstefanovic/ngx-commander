@@ -32,6 +32,7 @@
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     transition: all 0.3s;
+    min-width: 140px;
   }
   &-header {
     flex: 1;
@@ -99,6 +100,9 @@
     padding-top: 30px;
     justify-content: center;
 
+    .CMND-sidebar-header {
+      display: none;
+    }
     .sidebar-title {
       opacity: 0;
       visibility: hidden;

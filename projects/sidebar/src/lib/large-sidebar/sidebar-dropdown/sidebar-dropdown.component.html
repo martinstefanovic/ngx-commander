@@ -6,6 +6,7 @@
       [ngClass]="{ 'active-dropdown': isDropdownOpen }"
       [class.closed-sidebar]="isSidebarClosed"
       (click)="isDropdownOpen = !isDropdownOpen"
+      [appTooltip]="item.title"
     >
       <ng-icon size="15" class="icon" [name]="item.icon"></ng-icon>
       <p>{{ item.title }}</p>
@@ -32,7 +33,7 @@
             <span *ngIf="!isSidebarClosed">
               {{ subItem.title }}
             </span>
-            <ng-icon size="15" *ngIf="isSidebarClosed" [name]="subItem.icon"></ng-icon>
+            <ng-icon size="15" *ngIf="isSidebarClosed" class="icon" [name]="subItem.icon"></ng-icon>
           </div>
         </ng-container>
       </ng-container>

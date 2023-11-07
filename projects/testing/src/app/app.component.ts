@@ -10,20 +10,8 @@ export class AppComponent {
   smallSidebar = {
     routes: [
       {
-        title: 'Social Media',
-        icon: 'SM',
-      },
-      {
-        title: 'Social Media',
-        icon: 'SM',
-      },
-      {
-        title: 'Social Media',
-        icon: 'SM',
-      },
-      {
-        title: 'Social Media',
-        icon: 'SM',
+        title: 'Sidebar example',
+        icon: 'SE',
       },
       {
         title: 'Social Media',
@@ -32,366 +20,30 @@ export class AppComponent {
     ],
   };
   largeSidebar = {
-    title: 'test',
+    title: 'Sidebar example',
     routes: [
       {
         path: ['statistics'],
         title: 'Dashboard',
-        icon: 'heroUsers',
+        icon: 'heroPresentationChartBar',
         name: 'statistics',
       },
       {
         opened: false,
-        title: 'Digital Spark™ Analytics',
+        title: 'Users',
         type: 'dropdown',
         icon: 'heroUsers',
         name: 'statistics',
         children: [
           {
             path: ['statistics'],
-            title: 'Analytics',
+            title: 'Clients',
             icon: 'heroUsers',
             name: 'statistics',
           },
           {
             path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-        ],
-      },
-      {
-        opened: false,
-        title: 'Digital Spark™ Analytics',
-        type: 'dropdown',
-        icon: 'heroUsers',
-        name: 'statistics',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Analytics',
-            icon: 'heroUsers',
-            name: 'statistics',
-          },
-          {
-            path: ['statistics', 'pro'],
-            title: 'Analytics Pro',
+            title: 'Administrators',
             icon: 'heroUsers',
             name: 'statistics',
           },
