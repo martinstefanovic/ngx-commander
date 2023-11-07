@@ -1,16 +1,17 @@
 import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'ngx-commander-small-sidebar',
+  selector: 'c-small-sidebar',
   templateUrl: './small-sidebar.component.html',
-  styleUrls: ['./small-sidebar.component.scss', '../../../_variables.scss'],
+  styleUrls: ['./small-sidebar.component.scss', '../../../style.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class SmallSidebarComponent {
   @Output() selectItem = new EventEmitter();
   @Output() toggleSidebar = new EventEmitter();
-  @Input() menuItems?: { title: string; moduleName: string; icon: string }[];
+  @Input() config?: {
+    routes: { title: string; icon: string }[];
+  };
   @Input() defaultSelectedIndex?: number;
   @Input() set colors(colors: any) {
     this.defaultColors = { ...this.defaultColors, ...colors };

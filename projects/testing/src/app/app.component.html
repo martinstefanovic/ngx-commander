@@ -1,11 +1,32 @@
-<h1>TEstiranje</h1>
-<lib-sidebar />
-<ngx-commander-small-sidebar
-  [menuItems]="[
-    {
-      title: 'Social Media',
-      icon: 'SM',
-      moduleName: 'social-media',
-    }
-  ]"
-/>
+<div style="display: flex; height: 100vh; overflow: hidden">
+  <c-responsive-container>
+    <div style="height: 100vh">
+      <c-sidebar-header
+        [config]="{
+          logo: {
+            url: 'https://picsum.photos/500/300',
+            height: '50px',
+            width: 'auto'
+          },
+          collapsedLogo: {
+            url: 'https://picsum.photos/500/300',
+            height: '30px',
+            width: 'auto'
+          }
+        }"
+      />
+      <div style="display: flex; height: 100%">
+        <c-small-sidebar [config]="smallSidebar" />
+        <c-large-sidebar [config]="largeSidebar" />
+      </div>
+    </div>
+  </c-responsive-container>
+  <div>
+    <h1>Ovo je test</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repellendus earum veniam non consequuntur ipsam,
+      quidem numquam dolorem tenetur, natus aspernatur a odit incidunt temporibus explicabo hic ipsa corporis unde.
+      Odit, optio. Nulla in ullam quia quaerat. Eum, velit porro.
+    </p>
+  </div>
+</div>

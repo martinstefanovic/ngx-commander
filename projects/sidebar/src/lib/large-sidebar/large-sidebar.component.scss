@@ -1,0 +1,115 @@
+@import '../../../mixins';
+
+.ngCommander-sidebar {
+  height: 90vh;
+  width: 230px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-flow: column;
+  background-color: var(--ngx-commander-large-sidebar-background);
+  padding-top: 20px;
+  border-right: 1px solid #efeff0;
+
+  @include xl {
+    width: 290px;
+  }
+  @include lg {
+    width: 260px;
+  }
+  @include xs {
+    min-width: 0px;
+    width: 100%;
+    box-shadow: none;
+  }
+  @include z-125 {
+    width: 230px;
+  }
+  .sidebar-title {
+    color: var(--ngx-commander-large-sidebar-text);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  &-header {
+    flex: 1;
+  }
+  &-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    padding: 0px 1rem;
+    flex: 20;
+
+    &::-webkit-scrollbar {
+      width: 2px !important;
+    }
+    // /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f4fafe;
+    }
+    // /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: var(--ngx-commander-small-sidebar-active-text);
+    }
+    // /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--ngx-commander-small-sidebar-active-text);
+    }
+  }
+  &-footer {
+    flex: 1;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0px 1rem;
+    margin-top: 20px;
+
+    .button-key {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      min-height: 20px;
+      background-color: #eff3f8;
+      color: #495057;
+
+      &:first-child {
+        margin-right: 0.2rem;
+      }
+    }
+    span {
+      font-size: 0.7rem;
+      margin-left: 0.4rem;
+      color: #495057cc;
+      transition: all 0.3s;
+      min-width: 100px;
+      opacity: 1;
+    }
+  }
+  &.closed {
+    width: 80px;
+    padding: 0;
+    padding-top: 30px;
+    justify-content: center;
+
+    .sidebar-title {
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+    }
+  }
+}
+
+.hide {
+  opacity: 0 !important;
+  visibility: hidden;
+  position: absolute;
+  bottom: -300px;
+}

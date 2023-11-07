@@ -1,0 +1,14 @@
+<ng-container *ngIf="item?.path">
+  <div
+    class="ngxCommander-item"
+    [class.closed-sidebar]="isSidebarClosed"
+    [routerLink]="item.path"
+    routerLinkActive="active"
+    tooltipPosition="right"
+    [ngClass]="{ 'sidebar-in-progress': item.progress }"
+  >
+    <!-- (click)="innerWidth < 500 ? collapseMenu() : null" -->
+    <ng-icon class="icon" [name]="item.icon"></ng-icon>
+    <span class="item-title"> {{ item.title }} </span>
+  </div>
+</ng-container>

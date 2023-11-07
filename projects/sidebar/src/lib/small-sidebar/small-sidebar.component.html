@@ -1,6 +1,6 @@
 <article class="ngxCommander-small-sidebar">
   <div
-    *ngFor="let item of menuItems; let index = index"
+    *ngFor="let item of config?.routes; let index = index"
     class="item"
     (click)="onSelectItem(index, item)"
     [class.active]="activeItemIndex === index"

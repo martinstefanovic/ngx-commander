@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidebarComponent, SidebarModule } from 'projects/sidebar/src/public-api';
+import { SidebarModule } from 'projects/sidebar/src/public-api';
+
+import { NgIconsModule } from '@ng-icons/core';
+import { heroUsers, heroBars4 } from '@ng-icons/heroicons/outline';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SidebarModule],
+  imports: [BrowserModule, AppRoutingModule, SidebarModule, NgIconsModule.withIcons({ heroUsers })],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,56 @@
+.ngxCommander-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  cursor: pointer;
+  color: var(--ngx-commander-large-sidebar-text);
+  height: 3rem;
+  background-color: var(--ngx-commander-large-sidebar-item-background);
+  i {
+    margin-right: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--sidebar-icon-color);
+  }
+  &:hover {
+    .item-title {
+      color: var(--ngx-commander-large-sidebar-active-text);
+    }
+    .icon {
+      color: var(--ngx-commander-large-sidebar-active-icon);
+    }
+  }
+  .icon {
+    color: var(--ngx-commander-large-sidebar-icon);
+    transition: all 0.3s;
+  }
+  .item-title {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    min-width: 150px;
+    opacity: 1;
+    margin-left: 0.5rem;
+    color: var(--ngx-commander-large-sidebar-text);
+  }
+  &.active {
+    .item-title {
+      color: var(--main-color);
+    }
+  }
+  &.closed-sidebar {
+    .icon {
+      margin-left: 0.4rem;
+    }
+    .item-title {
+      opacity: 0;
+      width: 0px;
+      color: #fff;
+      // height: 0px;
+      overflow: hidden;
+      margin: 0;
+    }
+  }
+}

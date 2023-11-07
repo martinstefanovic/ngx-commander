@@ -1,12 +1,21 @@
-@import '~@angular/cdk/overlay-prebuilt.css';
-
 :root {
+  --ngx-commander-small-sidebar-background: #fafafa;
   --ngx-commander-small-sidebar-active-text: #215bde;
   --ngx-commander-small-sidebar-text: black;
-  --ngx-commander-small-sidebar-active-background: #eaeaea;
-  --ngx-commander-small-sidebar-background: #eaeaea;
+  --ngx-commander-small-sidebar-item-active-background: #eaeaea;
+  --ngx-commander-small-sidebar-item-background: #eaeaea;
   --ngx-commander-small-sidebar-active-border: #215bde;
   --ngx-commander-small-sidebar-font: 'Open Sans', sans-serif;
+}
+:root {
+  --ngx-commander-large-sidebar-background: #fff;
+  --ngx-commander-large-sidebar-icon: #9194a1;
+  --ngx-commander-large-sidebar-active-icon: #215bde;
+  --ngx-commander-large-sidebar-active-text: #215bde;
+  --ngx-commander-large-sidebar-text: #9194a1;
+  --ngx-commander-large-sidebar-item-active-background: #f0f4f6;
+  --ngx-commander-large-sidebar-item-background: #fff;
+  --ngx-commander-large-sidebar-font: 'Open Sans', sans-serif;
 }
 * {
   font-family: var(--ngx-commander-small-sidebar-font);
