@@ -1,0 +1,60 @@
+@mixin sidebar-single-item {
+  .sidebar-single-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem;
+    width: 100%;
+    cursor: pointer;
+    color: var(--ngx-commander-large-sidebar-text);
+    background-color: var(--ngx-commander-large-sidebar-item-background);
+    border-left: 1px solid #e4e3e6;
+    position: relative;
+    &::before {
+      content: '';
+      width: 2px;
+      height: 60%;
+      opacity: 0;
+      background: #a5a4a8;
+      position: absolute;
+      left: -1px;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      &::before {
+        opacity: 0.9;
+      }
+      .item-title {
+        color: black;
+        opacity: 0.8;
+      }
+    }
+    .item-title {
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      min-width: 150px;
+      opacity: 1;
+      margin-left: 0.2rem;
+      font-size: 0.9rem;
+      color: var(--ngx-commander-large-sidebar-text);
+    }
+    &.active {
+      &:hover {
+        &::before {
+          height: 100%;
+        }
+      }
+      &::before {
+        opacity: 1;
+        height: 90%;
+        background: linear-gradient(0deg, #8514f5 0%, oklch(69.02% 0.277 332.77) 100%);
+      }
+      .item-title {
+        color: #d234c2;
+        font-weight: bold;
+      }
+    }
+  }
+}

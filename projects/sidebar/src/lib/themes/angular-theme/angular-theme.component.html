@@ -1,0 +1,39 @@
+<main
+  class="angular-sidebar"
+  [ngClass]="{ closed: isSidebarClosed }"
+  [ngStyle]="{ height: config?.style?.height ?? '90vh' }"
+>
+  <div class="angular-sidebar-body">
+    <section class="screen screen-1" [ngClass]="{ 'hide-screen': isDropdownOpened }">
+      <ng-container *ngFor="let menuItem of config?.routes; let i = index">
+        <app-sidebar-item
+          [showIcon]="false"
+          [isSidebarClosed]="isSidebarClosed"
+          [item]="menuItem"
+          *ngIf="menuItem?.path"
+        />
+        <app-sidebar-title [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
+        <p class="open-screen-btn" *ngIf="menuItem.children" (click)="onOpenDropdown(menuItem)">
+          <span class="item-title"> {{ menuItem.title }} </span>
+          <ng-icon size="15" class="icon" name="heroChevronRight"></ng-icon>
+        </p>
+      </ng-container>
+    </section>
+    <section class="screen screen-2" [ngClass]="{ 'show-screen': isDropdownOpened }">
+      <div class="dropdown-header" (click)="isDropdownOpened = false">
+        <ng-icon size="20" class="icon" name="heroArrowLeft"></ng-icon>
+        <span>{{ selectedDropdown?.title }}</span>
+      </div>
+
+      <ng-container *ngFor="let menuItem of selectedDropdown?.children">
+        <app-sidebar-title [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
+        <app-sidebar-item
+          [showIcon]="false"
+          [isSidebarClosed]="isSidebarClosed"
+          [item]="menuItem"
+          *ngIf="menuItem?.path"
+        />
+      </ng-container>
+    </section>
+  </div>
+</main>

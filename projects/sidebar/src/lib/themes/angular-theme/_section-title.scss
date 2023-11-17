@@ -1,0 +1,13 @@
+@mixin section-title {
+  .sidebar-section-title {
+    color: var(--ngx-commander-large-sidebar-text);
+    font-weight: 500;
+    min-width: 140px;
+    padding: 0.5rem 0rem;
+    margin: 0.7rem 0;
+    span {
+      color: black;
+      font-size: 0.9rem;
+    }
+  }
+}

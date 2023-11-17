@@ -5,7 +5,7 @@
   --ngx-commander-small-sidebar-item-active-background: #eaeaea;
   --ngx-commander-small-sidebar-item-background: #eaeaea;
   --ngx-commander-small-sidebar-active-border: #215bde;
-  --ngx-commander-small-sidebar-font: 'Open Sans', sans-serif;
+  --ngx-commander-small-sidebar-font: 'Inter', sans-serif;
 }
 :root {
   --ngx-commander-large-sidebar-background: #fff;
@@ -15,11 +15,12 @@
   --ngx-commander-large-sidebar-text: #9194a1;
   --ngx-commander-large-sidebar-item-active-background: #f0f4f6;
   --ngx-commander-large-sidebar-item-background: #fff;
-  --ngx-commander-large-sidebar-font: 'Open Sans', sans-serif;
-}
-:root {
+  --ngx-commander-large-sidebar-font: 'Inter', sans-serif;
   --ngx-commander-large-sidebar-menu-btn-color: #215bde;
 }
+:root {
+  --ngx-commander-font-size: '12px';
+}
 * {
-  font-family: var(--ngx-commander-small-sidebar-font);
+  font-family: var(--ngx-commander-large-sidebar-font);
 }

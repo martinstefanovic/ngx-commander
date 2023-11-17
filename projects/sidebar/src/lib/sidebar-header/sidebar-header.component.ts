@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'c-sidebar-header',
   templateUrl: './sidebar-header.component.html',
-  styleUrls: ['./sidebar-header.component.scss', '../../../style.scss'],
+  styleUrls: ['./sidebar-header.component.scss'],
 })
 export class SidebarHeaderComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];

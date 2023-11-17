@@ -1,0 +1,26 @@
+@mixin section-title {
+  .sidebar-section-title {
+    color: var(--ngx-commander-large-sidebar-text);
+    font-weight: 400;
+    text-transform: uppercase;
+    min-width: 140px;
+    padding: 0.5rem 1rem;
+    margin-top: 0.7rem;
+    span {
+      font-size: 0.75rem;
+    }
+  }
+  .closed {
+    .sidebar-section-title {
+      width: 80%;
+      min-width: 0px;
+      height: 1px;
+      padding: 0;
+      background-color: #e0e0e0;
+      margin: 0.6rem auto;
+      span {
+        display: none;
+      }
+    }
+  }
+}

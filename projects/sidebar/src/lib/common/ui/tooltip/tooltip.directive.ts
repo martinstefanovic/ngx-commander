@@ -16,6 +16,7 @@ import { TooltipContainerComponent, TooltipData, TOOLTIP_DATA } from './tooltip-
 })
 export class TooltipDirective {
   @Input() appTooltip!: TooltipData;
+  @Input() disableTooltip = false;
 
   private overlayRef: OverlayRef | null = null;
 
@@ -32,7 +33,7 @@ export class TooltipDirective {
       return;
     }
 
-    this.attachTooltip();
+    if (!this.disableTooltip) this.attachTooltip();
   }
 
   @HostListener('mouseleave')

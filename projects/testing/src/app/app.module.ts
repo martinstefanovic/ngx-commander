@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SidebarModule } from 'projects/sidebar/src/public-api';
 
 import { NgIconsModule } from '@ng-icons/core';
-import { heroUsers, heroBars4, heroPresentationChartBar } from '@ng-icons/heroicons/outline';
+import { heroUsers, heroPresentationChartBar } from '@ng-icons/heroicons/outline';
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,0 +1,23 @@
+<main
+class="classic-sidebar"
+[ngClass]="{ closed: isSidebarClosed }"
+[ngStyle]="{ height: config?.style?.height ?? '90vh' }"
+>
+<div class="classic-sidebar-header">
+  <h3 *ngIf="config?.title" class="sidebar-title">
+    {{ config?.title }}
+  </h3>
+</div>
+<div class="classic-sidebar-body">
+  <ng-container *ngFor="let menuItem of config?.routes; let i = index">
+    <app-sidebar-item [isSidebarClosed]="isSidebarClosed" [item]="menuItem" *ngIf="menuItem?.path" />
+    <app-sidebar-dropdown [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
+    <app-sidebar-title [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
+  </ng-container>
+</div>
+<div class="classic-sidebar-footer" (click)="onToggleSidebar()">
+  <kbd class="button-key">⌘</kbd>
+  <kbd class="button-key">L</kbd>
+  <span [class.hide]="isSidebarClosed">Collapse sidebar</span>
+</div>
+</main>

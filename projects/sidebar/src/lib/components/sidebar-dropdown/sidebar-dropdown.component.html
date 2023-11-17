@@ -1,12 +1,13 @@
-<ng-container *ngIf="item.type === 'dropdown'">
-  <section class="nav-item-dropdown">
+<ng-container *ngIf="item.children">
+  <section>
     <div
-      class="item"
+      class="sidebar-dropdown-item"
       tooltipPosition="right"
       [ngClass]="{ 'active-dropdown': isDropdownOpen }"
       [class.closed-sidebar]="isSidebarClosed"
       (click)="isDropdownOpen = !isDropdownOpen"
       [appTooltip]="item.title"
+      [disableTooltip]="!isSidebarClosed"
     >
       <ng-icon size="15" class="icon" [name]="item.icon"></ng-icon>
       <p>{{ item.title }}</p>
@@ -18,16 +19,20 @@
       </ng-template>
     </div>
 
-    <div class="subitems" [ngClass]="isDropdownOpen ? 'opened' : ''" [class.closed-sidebar]="isSidebarClosed">
+    <div
+      class="sidebar-dropdown-subitems"
+      [ngClass]="isDropdownOpen ? 'opened' : ''"
+      [class.closed-sidebar]="isSidebarClosed"
+    >
       <ng-container *ngFor="let subItem of item.children">
         <ng-container *ngIf="subItem.path">
           <div
-            class="item subitem"
-            [ngClass]="{ 'sidebar-in-progress': subItem.progress }"
+            class="sidebar-dropdown-item sidebar-dropdown-subitem"
             [routerLink]="subItem.path"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            tooltipPosition="right"
+            [appTooltip]="subItem.title"
+            [disableTooltip]="!isSidebarClosed"
           >
             <i *ngIf="!isSidebarClosed" class="line-connector"></i>
             <span *ngIf="!isSidebarClosed">

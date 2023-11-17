@@ -1,0 +1,11 @@
+<span [ngSwitch]="config?.theme">
+  <p *ngSwitchCase="'classic'">
+    <c-classic-theme [config]="config" />
+  </p>
+  <p *ngSwitchCase="'angular'">
+    <c-angular-theme [config]="config" />
+  </p>
+  <p *ngSwitchDefault>
+    <c-classic-theme [config]="config" />
+  </p>
+</span>

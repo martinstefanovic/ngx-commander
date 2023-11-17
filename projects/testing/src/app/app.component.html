@@ -4,12 +4,12 @@
       <c-sidebar-header
         [config]="{
           logo: {
-            url: 'https://angular.io/assets/images/logos/angular/shield-large.svg',
+            url: './../assets/full-logo.png',
             height: '50px',
             width: 'auto'
           },
           collapsedLogo: {
-            url: 'https://angular.io/assets/images/logos/angular/shield-large.svg',
+            url: './../assets/full-logo.png',
             height: '30px',
             width: 'auto'
           }
@@ -17,7 +17,7 @@
       />
       <div style="display: flex; height: 100%">
         <c-small-sidebar [config]="smallSidebar" />
-        <c-large-sidebar [config]="largeSidebar" />
+        <c-sidebar [config]="largeSidebar" />
       </div>
     </div>
   </c-responsive-container>

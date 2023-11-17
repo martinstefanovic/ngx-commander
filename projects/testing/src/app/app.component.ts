@@ -19,9 +19,17 @@ export class AppComponent {
       },
     ],
   };
-  largeSidebar = {
+  largeSidebar: {
+    theme: 'angular';
+    title: string;
+    routes: any[];
+  } = {
+    theme: 'angular',
     title: 'Sidebar example',
     routes: [
+      {
+        title: 'Introduction',
+      },
       {
         path: ['statistics'],
         title: 'Dashboard',
@@ -31,7 +39,6 @@ export class AppComponent {
       {
         opened: false,
         title: 'Users',
-        type: 'dropdown',
         icon: 'heroUsers',
         name: 'statistics',
         children: [

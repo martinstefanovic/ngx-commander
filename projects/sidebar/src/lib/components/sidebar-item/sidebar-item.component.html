@@ -1,13 +1,13 @@
 <ng-container *ngIf="item?.path">
   <div
-    class="ngxCommander-item"
+    class="sidebar-single-item"
     [class.closed-sidebar]="isSidebarClosed"
     [routerLink]="item.path"
     routerLinkActive="active"
-    tooltipPosition="right"
-    [ngClass]="{ 'sidebar-in-progress': item.progress }"
+    [appTooltip]="item.title"
+    [disableTooltip]="!isSidebarClosed"
   >
-    <ng-icon size="15" class="icon" [name]="item.icon"></ng-icon>
+    <ng-icon *ngIf="showIcon" size="15" class="icon" [name]="item.icon"></ng-icon>
     <span class="item-title"> {{ item.title }} </span>
   </div>
 </ng-container>

@@ -1,6 +1,6 @@
 # Intro
 
-![](src/assets/sidebar.jpeg)
+![](https://raw.githubusercontent.com/martinstefanovic/ngx-commander/main/projects/sidebar/src/assets/sidebar.jpeg)
 
 ## Installation
 
