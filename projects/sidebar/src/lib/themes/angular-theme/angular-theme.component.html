@@ -33,6 +33,7 @@
           [item]="menuItem"
           *ngIf="menuItem?.path"
         />
+        <app-sidebar-dropdown [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
       </ng-container>
     </section>
   </div>

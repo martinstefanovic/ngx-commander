@@ -3,6 +3,8 @@
 @import './sidebar-single-item.scss';
 @import './sidebar-dropdown-item';
 
+@include section-title;
+
 .classic-sidebar {
   height: 90vh;
   width: 230px;
@@ -28,7 +30,6 @@
     width: 230px;
   }
 
-  @include section-title;
   @include sidebar-single-item;
   @include sidebar-dropdown-item;
 
