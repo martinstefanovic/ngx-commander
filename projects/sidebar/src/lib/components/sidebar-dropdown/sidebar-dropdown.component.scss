@@ -1,0 +1,13 @@
+.classic-sidebar {
+  .closed-sidebar {
+    .subdropdown {
+      padding-left: 0rem !important;
+      margin-left: -5px !important;
+    }
+    .sidebar-dropdown-subitems {
+      &.closed-sidebar {
+        margin-left: 0px !important;
+      }
+    }
+  }
+}

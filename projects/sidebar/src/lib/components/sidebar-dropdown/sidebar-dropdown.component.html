@@ -4,6 +4,7 @@
       class="sidebar-dropdown-item"
       tooltipPosition="right"
       [ngClass]="{ 'active-dropdown': isDropdownOpen }"
+      [class]="styleClass"
       [class.closed-sidebar]="isSidebarClosed"
       (click)="isDropdownOpen = !isDropdownOpen"
       [appTooltip]="item.title"
@@ -40,6 +41,13 @@
             </span>
             <ng-icon size="15" *ngIf="isSidebarClosed" class="icon" [name]="subItem.icon"></ng-icon>
           </div>
+        </ng-container>
+        <ng-container *ngIf="subItem?.children">
+          <app-sidebar-dropdown
+            styleClass="bg-transparent subdropdown"
+            [item]="subItem"
+            [isSidebarClosed]="isSidebarClosed"
+          />
         </ng-container>
       </ng-container>
     </div>

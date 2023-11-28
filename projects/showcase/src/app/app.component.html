@@ -1,0 +1,11 @@
+<c-permissions-alert />
+
+<p>User role: {{ currentRole }}</p>
+
+<button (click)="onTriggerAction()" checkPermission can="manage:news">Manage news</button>
+<br />
+<br />
+<button (click)="onTriggerAction()" checkPermission can="read:news">Read news</button>
+<br />
+<br />
+<button (click)="onTriggerAction()" checkPermission can="delete:news">Delete news</button>

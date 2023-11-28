@@ -20,11 +20,11 @@ export class AppComponent {
     ],
   };
   largeSidebar: {
-    theme: 'angular';
+    theme: 'classic';
     title: string;
     routes: any[];
   } = {
-    theme: 'angular',
+    theme: 'classic',
     title: 'Sidebar example',
     routes: [
       {
@@ -34,25 +34,62 @@ export class AppComponent {
         path: ['statistics'],
         title: 'Dashboard',
         icon: 'heroPresentationChartBar',
-        name: 'statistics',
       },
       {
-        opened: false,
         title: 'Users',
         icon: 'heroUsers',
-        name: 'statistics',
         children: [
           {
             path: ['statistics'],
             title: 'Clients',
             icon: 'heroUsers',
-            name: 'statistics',
           },
           {
-            path: ['statistics', 'pro'],
-            title: 'Administrators',
+            path: ['statistics'],
+            title: 'Users',
             icon: 'heroUsers',
-            name: 'statistics',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+          {
+            path: ['statistics'],
+            title: 'Users',
+            icon: 'heroUsers',
+          },
+          {
+            path: ['statistics'],
+            title: 'Dashboards',
+            icon: 'heroUsers',
+          },
+          {
+            title: 'Subdropdown',
+            icon: 'heroUsers',
+            children: [
+              {
+                path: ['statistics'],
+                title: 'Subsubitem',
+                icon: 'heroUsers',
+              },
+            ],
+          },
+          {
+            path: ['statistics'],
+            title: 'Users',
+            icon: 'heroUsers',
+          },
+          {
+            path: ['statistics'],
+            title: 'Dashboards',
+            icon: 'heroUsers',
           },
         ],
       },

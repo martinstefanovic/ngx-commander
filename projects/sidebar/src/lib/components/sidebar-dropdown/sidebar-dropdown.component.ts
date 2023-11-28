@@ -12,4 +12,5 @@ export class SidebarDropdownComponent {
   isDropdownOpen = false;
   subscriptions: Subscription[] = [];
   @Input() isSidebarClosed: boolean = false;
+  @Input() styleClass!: string;
 }
