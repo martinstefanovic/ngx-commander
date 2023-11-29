@@ -35,7 +35,7 @@
             [appTooltip]="subItem.title"
             [disableTooltip]="!isSidebarClosed"
           >
-            <i *ngIf="!isSidebarClosed" class="line-connector"></i>
+            <i class="line-connector" [ngClass]="{ 'hide-line-connector': isSidebarClosed }"></i>
             <span *ngIf="!isSidebarClosed">
               {{ subItem.title }}
             </span>
