@@ -1,12 +1,13 @@
 <section class="sidebar-header">
-  <img
-    *ngIf="config"
-    class="main-logo"
-    [class.small-logo]="isSidebarClosed"
-    [src]="isSidebarClosed ? config?.collapsedLogo?.url : config?.logo?.url"
-    [ngStyle]="{
-      height: isSidebarClosed ? config?.collapsedLogo?.height : config?.logo?.height,
-      width: isSidebarClosed ? config?.collapsedLogo?.width : config?.logo?.width
-    }"
-  />
+  @if (config) {
+    <img
+      class="main-logo"
+      [class.small-logo]="isSidebarClosed"
+      [src]="isSidebarClosed ? config?.collapsedLogo?.url : config?.logo?.url"
+      [ngStyle]="{
+        height: isSidebarClosed ? config?.collapsedLogo?.height : config?.logo?.height,
+        width: isSidebarClosed ? config?.collapsedLogo?.width : config?.logo?.width
+      }"
+    />
+  }
 </section>

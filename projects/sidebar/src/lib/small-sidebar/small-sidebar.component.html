@@ -1,11 +1,12 @@
 <article class="ngxCommander-small-sidebar">
-  <div
-    *ngFor="let item of config?.routes; let index = index"
-    class="item"
-    (click)="onSelectItem(index, item)"
-    [class.active]="activeItemIndex === index"
-    [appTooltip]="item.title"
-  >
-    <span>{{ item.icon }}</span>
-  </div>
+  @for (item of config?.routes; track item.title; let index = $index) {
+    <div
+      class="item"
+      (click)="onSelectItem(index, item)"
+      [class.active]="activeItemIndex === index"
+      [appTooltip]="item.title"
+    >
+      <span>{{ item.icon }}</span>
+    </div>
+  }
 </article>

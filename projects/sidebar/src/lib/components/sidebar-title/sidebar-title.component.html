@@ -1,8 +1,5 @@
-<p
-  *ngIf="!item?.path && !item.children"
-  class="sidebar-section-title"
-  [appTooltip]="item.title"
-  [disableTooltip]="!isSidebarClosed"
->
-  <span>{{ item.title }}</span>
-</p>
+@if (!item?.path && !item.children) {
+  <p class="sidebar-section-title" [appTooltip]="item.title" [disableTooltip]="!isSidebarClosed">
+    <span>{{ item.title }}</span>
+  </p>
+}

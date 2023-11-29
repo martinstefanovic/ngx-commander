@@ -5,19 +5,20 @@
 >
   <div class="angular-sidebar-body">
     <section class="screen screen-1" [ngClass]="{ 'hide-screen': isDropdownOpened }">
-      <ng-container *ngFor="let menuItem of config?.routes; let i = index">
-        <app-sidebar-item
-          [showIcon]="false"
-          [isSidebarClosed]="isSidebarClosed"
-          [item]="menuItem"
-          *ngIf="menuItem?.path"
-        />
+      @for (menuItem of config?.routes; track menuItem; let i = $index) {
+        @if (menuItem?.path) {
+          <app-sidebar-item [showIcon]="false" [isSidebarClosed]="isSidebarClosed" [item]="menuItem" />
+        }
+
         <app-sidebar-title [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
-        <p class="open-screen-btn" *ngIf="menuItem.children" (click)="onOpenDropdown(menuItem)">
-          <span class="item-title"> {{ menuItem.title }} </span>
-          <ng-icon size="15" class="icon" name="heroChevronRight"></ng-icon>
-        </p>
-      </ng-container>
+
+        @if (menuItem.children) {
+          <p class="open-screen-btn" (click)="onOpenDropdown(menuItem)">
+            <span class="item-title"> {{ menuItem.title }} </span>
+            <ng-icon size="15" class="icon" name="heroChevronRight"></ng-icon>
+          </p>
+        }
+      }
     </section>
     <section class="screen screen-2" [ngClass]="{ 'show-screen': isDropdownOpened }">
       <div class="dropdown-header" (click)="isDropdownOpened = false">
@@ -25,16 +26,14 @@
         <span>{{ selectedDropdown?.title }}</span>
       </div>
 
-      <ng-container *ngFor="let menuItem of selectedDropdown?.children">
+      @for (menuItem of selectedDropdown?.children; track menuItem) {
         <app-sidebar-title [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
-        <app-sidebar-item
-          [showIcon]="false"
-          [isSidebarClosed]="isSidebarClosed"
-          [item]="menuItem"
-          *ngIf="menuItem?.path"
-        />
+        @if (menuItem?.path) {
+          <app-sidebar-item [showIcon]="false" [isSidebarClosed]="isSidebarClosed" [item]="menuItem" />
+        }
+
         <app-sidebar-dropdown [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
-      </ng-container>
+      }
     </section>
   </div>
 </main>

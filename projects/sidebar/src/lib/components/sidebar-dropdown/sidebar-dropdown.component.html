@@ -1,4 +1,4 @@
-<ng-container *ngIf="item.children">
+@if (item.children) {
   <section>
     <div
       class="sidebar-dropdown-item"
@@ -10,14 +10,15 @@
       [appTooltip]="item.title"
       [disableTooltip]="!isSidebarClosed"
     >
-      <ng-icon size="15" class="icon" [name]="item.icon"></ng-icon>
+      <ng-icon size="15" class="icon" [name]="item.icon" />
       <p>{{ item.title }}</p>
-      <ng-container *ngIf="isDropdownOpen; else iconUp">
-        <ng-icon *ngIf="!isSidebarClosed" class="sidebar-dropdown-icon" name="heroChevronUp"></ng-icon>
-      </ng-container>
-      <ng-template #iconUp>
-        <ng-icon *ngIf="!isSidebarClosed" class="sidebar-dropdown-icon" name="heroChevronDown"></ng-icon>
-      </ng-template>
+      @if (!isSidebarClosed) {
+        @if (isDropdownOpen) {
+          <ng-icon class="sidebar-dropdown-icon" name="heroChevronUp" />
+        } @else {
+          <ng-icon class="sidebar-dropdown-icon" name="heroChevronDown" />
+        }
+      }
     </div>
 
     <div
@@ -25,8 +26,8 @@
       [ngClass]="isDropdownOpen ? 'opened' : ''"
       [class.closed-sidebar]="isSidebarClosed"
     >
-      <ng-container *ngFor="let subItem of item.children">
-        <ng-container *ngIf="subItem.path">
+      @for (subItem of item.children; track subItem) {
+        @if (subItem.path) {
           <div
             class="sidebar-dropdown-item sidebar-dropdown-subitem"
             [routerLink]="subItem.path"
@@ -36,20 +37,23 @@
             [disableTooltip]="!isSidebarClosed"
           >
             <i class="line-connector" [ngClass]="{ 'hide-line-connector': isSidebarClosed }"></i>
-            <span *ngIf="!isSidebarClosed">
-              {{ subItem.title }}
-            </span>
-            <ng-icon size="15" *ngIf="isSidebarClosed" class="icon" [name]="subItem.icon"></ng-icon>
+            @if (!isSidebarClosed) {
+              <span>
+                {{ subItem.title }}
+              </span>
+            } @else {
+              <ng-icon size="15" class="icon" [name]="subItem.icon"></ng-icon>
+            }
           </div>
-        </ng-container>
-        <ng-container *ngIf="subItem?.children">
+        }
+        @if (subItem?.children) {
           <app-sidebar-dropdown
             styleClass="bg-transparent subdropdown"
             [item]="subItem"
             [isSidebarClosed]="isSidebarClosed"
           />
-        </ng-container>
-      </ng-container>
+        }
+      }
     </div>
   </section>
-</ng-container>
+}

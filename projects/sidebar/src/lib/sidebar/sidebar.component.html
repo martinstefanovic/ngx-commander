@@ -1,11 +1,11 @@
-<span [ngSwitch]="config?.theme">
-  <p *ngSwitchCase="'classic'">
+@switch (config?.theme) {
+  @case ('classic') {
     <c-classic-theme [config]="config" />
-  </p>
-  <p *ngSwitchCase="'angular'">
+  }
+  @case ('angular') {
     <c-angular-theme [config]="config" />
-  </p>
-  <p *ngSwitchDefault>
+  }
+  @default {
     <c-classic-theme [config]="config" />
-  </p>
-</span>
+  }
+}

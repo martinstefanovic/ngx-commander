@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
