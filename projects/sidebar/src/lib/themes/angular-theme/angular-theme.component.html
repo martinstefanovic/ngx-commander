@@ -15,14 +15,14 @@
         @if (menuItem.children) {
           <p class="open-screen-btn" (click)="onOpenDropdown(menuItem)">
             <span class="item-title"> {{ menuItem.title }} </span>
-            <ng-icon size="15" class="icon" name="heroChevronRight"></ng-icon>
+            <ng-icon size="15" class="icon" name="heroChevronRight" />
           </p>
         }
       }
     </section>
     <section class="screen screen-2" [ngClass]="{ 'show-screen': isDropdownOpened }">
       <div class="dropdown-header" (click)="isDropdownOpened = false">
-        <ng-icon size="20" class="icon" name="heroArrowLeft"></ng-icon>
+        <ng-icon size="20" class="icon" name="heroArrowLeft" />
         <span>{{ selectedDropdown?.title }}</span>
       </div>
 
@@ -31,7 +31,6 @@
         @if (menuItem?.path) {
           <app-sidebar-item [showIcon]="false" [isSidebarClosed]="isSidebarClosed" [item]="menuItem" />
         }
-
         <app-sidebar-dropdown [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
       }
     </section>

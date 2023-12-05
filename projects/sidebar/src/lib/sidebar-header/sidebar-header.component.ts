@@ -1,11 +1,14 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { SidebarService } from '../sidebar.service';
 import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'c-sidebar-header',
   templateUrl: './sidebar-header.component.html',
   styleUrls: ['./sidebar-header.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class SidebarHeaderComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];

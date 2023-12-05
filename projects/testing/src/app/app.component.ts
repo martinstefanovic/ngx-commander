@@ -36,6 +36,26 @@ export class AppComponent {
         icon: 'heroPresentationChartBar',
       },
       {
+        path: ['statistics'],
+        title: 'Dashboard',
+        icon: 'heroPresentationChartBar',
+      },
+      {
+        path: ['statistics'],
+        title: 'Dashboard',
+        icon: 'heroPresentationChartBar',
+      },
+      {
+        path: ['statistics'],
+        title: 'Dashboard',
+        icon: 'heroPresentationChartBar',
+      },
+      {
+        path: ['statistics'],
+        title: 'Dashboard',
+        icon: 'heroPresentationChartBar',
+      },
+      {
         title: 'Users',
         icon: 'heroUsers',
         children: [
@@ -89,6 +109,105 @@ export class AppComponent {
           {
             path: ['statistics'],
             title: 'Dashboards',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'Users',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
+            icon: 'heroUsers',
+          },
+        ],
+      },
+      {
+        title: 'LAST',
+        icon: 'heroUsers',
+        children: [
+          {
+            path: ['statistics'],
+            title: 'Clients',
             icon: 'heroUsers',
           },
         ],

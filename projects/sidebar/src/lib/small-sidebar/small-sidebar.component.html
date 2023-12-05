@@ -1,4 +1,9 @@
-<article class="ngxCommander-small-sidebar">
+<article
+  class="ngxCommander-small-sidebar"
+  [style]="{
+    height: config?.style?.height
+  }"
+>
   @for (item of config?.routes; track item.title; let index = $index) {
     <div
       class="item"

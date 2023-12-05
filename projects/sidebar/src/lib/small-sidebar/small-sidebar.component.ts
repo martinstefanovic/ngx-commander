@@ -1,17 +1,21 @@
 import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { TooltipDirective } from '../common/ui/tooltip/tooltip.directive';
+import { SmallSidebarConfig } from '../common/models/small-sidebar-config.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'c-small-sidebar',
   templateUrl: './small-sidebar.component.html',
   styleUrls: ['./small-sidebar.component.scss', '../../../style.scss'],
   encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [TooltipDirective, CommonModule],
 })
 export class SmallSidebarComponent {
+  height!: any;
   @Output() selectItem = new EventEmitter();
   @Output() toggleSidebar = new EventEmitter();
-  @Input() config?: {
-    routes: { title: string; icon: string }[];
-  };
+  @Input() config!: SmallSidebarConfig;
   @Input() defaultSelectedIndex?: number;
   @Input() set colors(colors: any) {
     this.defaultColors = { ...this.defaultColors, ...colors };
@@ -28,6 +32,9 @@ export class SmallSidebarComponent {
 
   ngOnInit(): void {
     this.activeItemIndex = this.defaultSelectedIndex;
+    setTimeout(() => {
+      this.height = this.config?.style?.height;
+    }, 2000);
   }
 
   onSelectItem(itemIndex: number, item: any) {

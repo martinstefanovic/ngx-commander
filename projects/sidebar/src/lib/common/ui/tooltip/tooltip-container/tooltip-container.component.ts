@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject, InjectionToken, TemplateRef } from '@angular/core';
 
 export type TooltipData = string | TemplateRef<void>;
@@ -36,6 +37,8 @@ export const TOOLTIP_DATA = new InjectionToken<TooltipData>('Data to display in 
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule],
 })
 export class TooltipContainerComponent {
   get asString(): string | false {

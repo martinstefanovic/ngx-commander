@@ -10,6 +10,8 @@ export * from './lib/small-sidebar/small-sidebar.component';
 export * from './lib/sidebar/sidebar.component';
 export * from './lib/responsive-container/responsive-container.component';
 export * from './lib/sidebar-header/sidebar-header.component';
+export * from './lib/cmd-sidebar/cmd-sidebar.component';
+// TEMP
 
 // Models
 export * from './lib/common/models/large-sidebar-config.model';

@@ -13,6 +13,7 @@ import {
 import { TooltipContainerComponent, TooltipData, TOOLTIP_DATA } from './tooltip-container/tooltip-container.component';
 @Directive({
   selector: '[appTooltip]',
+  standalone: true,
 })
 export class TooltipDirective {
   @Input() appTooltip!: TooltipData;

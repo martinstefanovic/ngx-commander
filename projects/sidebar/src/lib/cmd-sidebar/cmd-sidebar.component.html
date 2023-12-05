@@ -1,4 +1,4 @@
-<div style="display: flex; overflow: hidden" [style.height]="height">
+<!-- <div style="display: flex; overflow: hidden" [style.height]="height">
   <c-responsive-container>
     <div>
       @if (showHeader) {
@@ -23,19 +23,9 @@
           <c-small-sidebar [config]="smSidebarConfig" />
         }
         @if (lgSidebarConfig) {
-          @switch (lgSidebarConfig.theme) {
-            @case ('classic') {
-              <c-classic-theme [config]="lgSidebarConfig" />
-            }
-            @case ('angular') {
-              <c-angular-theme [config]="lgSidebarConfig" />
-            }
-            @default {
-              <c-classic-theme [config]="lgSidebarConfig" />
-            }
-          }
+          <c-sidebar [config]="lgSidebarConfig" />
         }
       </div>
     </div>
   </c-responsive-container>
-</div>
+</div> -->
