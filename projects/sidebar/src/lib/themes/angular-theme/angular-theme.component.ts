@@ -9,7 +9,7 @@ import { SidebarItemComponent } from '../../components/sidebar-item/sidebar-item
 @Component({
   selector: 'c-angular-theme',
   templateUrl: './angular-theme.component.html',
-  styleUrls: ['./angular-theme.component.scss'],
+  styleUrls: ['./angular-theme.component.scss', '../../../../style.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [CommonModule, NgIconsModule, SidebarTitleComponent, SidebarDropdownComponent, SidebarItemComponent],

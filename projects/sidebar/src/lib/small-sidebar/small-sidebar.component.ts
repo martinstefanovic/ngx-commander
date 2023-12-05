@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
 import { TooltipDirective } from '../common/ui/tooltip/tooltip.directive';
 import { SmallSidebarConfig } from '../common/models/small-sidebar-config.model';
 import { CommonModule } from '@angular/common';
+import { SidebarService } from '../common/services/sidebar.service';
+import { ClickType } from '../common/enums/click-type.enum';
 
 @Component({
   selector: 'c-small-sidebar',
@@ -13,22 +15,12 @@ import { CommonModule } from '@angular/common';
 })
 export class SmallSidebarComponent {
   height!: any;
-  @Output() selectItem = new EventEmitter();
-  @Output() toggleSidebar = new EventEmitter();
   @Input() config!: SmallSidebarConfig;
   @Input() defaultSelectedIndex?: number;
-  @Input() set colors(colors: any) {
-    this.defaultColors = { ...this.defaultColors, ...colors };
-  }
-  defaultColors = {
-    background: '#eaeaea',
-    text: 'black',
-    activeBackground: '#eaeaea',
-    activeBorder: '#215bde',
-    activeText: '#215bde',
-  };
   activeItemIndex?: number;
   isSidebarClosed = false;
+
+  constructor(private sidebarService: SidebarService) {}
 
   ngOnInit(): void {
     this.activeItemIndex = this.defaultSelectedIndex;
@@ -37,13 +29,15 @@ export class SmallSidebarComponent {
     }, 2000);
   }
 
-  onSelectItem(itemIndex: number, item: any) {
+  onSelectItem(event: Event, itemIndex: number, item: any) {
     this.activeItemIndex = itemIndex;
-    this.selectItem.emit({ index: itemIndex, item });
-  }
 
-  onSidebarToggle(): void {
-    this.isSidebarClosed = !this.isSidebarClosed;
-    this.toggleSidebar.emit(this.isSidebarClosed);
+    this.sidebarService.sidebarItemClick.next({
+      event,
+      data: item,
+      index: itemIndex,
+      type: ClickType.ITEM,
+      sidebarType: 'small',
+    });
   }
 }

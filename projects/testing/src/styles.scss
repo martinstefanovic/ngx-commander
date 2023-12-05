@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.red {
+  border: 2px solid rgba(0, 0, 255, 0.088) !important;
+}
+
+body {
+  overflow-x: hidden;
+}

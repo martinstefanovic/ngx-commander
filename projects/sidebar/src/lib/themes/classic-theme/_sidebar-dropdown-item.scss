@@ -9,6 +9,7 @@
     background-color: var(--ngx-commander-large-sidebar-item-background);
     position: relative;
     transition: all 0.3s;
+    border-radius: 10px;
     &:hover {
       p {
         color: var(--ngx-commander-large-sidebar-active-text);
@@ -47,7 +48,6 @@
     }
     &.active-dropdown {
       background-color: var(--ngx-commander-large-sidebar-item-active-background);
-      border-radius: 10px;
     }
     .sidebar-dropdown-icon {
       position: absolute;

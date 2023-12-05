@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
-  CmdSidebarComponent,
   ResponsiveContainerComponent,
   SidebarComponent,
   SidebarHeaderComponent,
@@ -25,7 +24,6 @@ import { heroUsers, heroPresentationChartBar } from '@ng-icons/heroicons/outline
     SidebarComponent,
     SmallSidebarComponent,
     ResponsiveContainerComponent,
-    CmdSidebarComponent,
     NgIconsModule.withIcons({ heroUsers, heroPresentationChartBar }),
   ],
   providers: [],

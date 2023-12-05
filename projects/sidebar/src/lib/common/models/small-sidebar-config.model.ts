@@ -5,5 +5,6 @@ export interface SmallSidebarConfig {
   routes: {
     title: string;
     icon?: string;
+    class?: string;
   }[];
 }

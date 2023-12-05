@@ -52,12 +52,13 @@ export class AppComponent {
       },
       {
         path: ['statistics'],
-        title: 'Dashboard',
+        title: 'BG Changed',
         icon: 'heroPresentationChartBar',
       },
       {
         title: 'Users',
         icon: 'heroUsers',
+        class: 'red',
         children: [
           {
             path: ['statistics'],
@@ -214,4 +215,18 @@ export class AppComponent {
       },
     ],
   };
+
+  /* ====================================
+  *                HELPERS
+  ======================================= */
+
+  onSelectSmallSidebar(event: any) {
+    console.log('SMALL SIDEBAR ITEM SELECTED', event);
+  }
+  onSelectSidebar(event: any) {
+    console.log('SIDEBAR ITEM SELECTED', event);
+  }
+  onSidebarItemClick(event: any) {
+    console.log('CLICK ON SIDEBAR ITEM', event);
+  }
 }

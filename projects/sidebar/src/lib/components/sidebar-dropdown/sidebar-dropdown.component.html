@@ -3,12 +3,14 @@
     <div
       class="sidebar-dropdown-item"
       tooltipPosition="right"
-      [ngClass]="{ 'active-dropdown': isDropdownOpen }"
       [class]="styleClass"
       [class.closed-sidebar]="isSidebarClosed"
+      [class.active-dropdown]="isDropdownOpen"
       (click)="isDropdownOpen = !isDropdownOpen"
       [appTooltip]="item.title"
       [disableTooltip]="!isSidebarClosed"
+      (click)="onClick($event, item, ClickType.DROPDOWN)"
+      [ngClass]="item.class"
     >
       <ng-icon size="15" class="icon" [name]="item.icon" />
       <p>{{ item.title }}</p>
@@ -29,6 +31,7 @@
       @for (subItem of item.children; track subItem) {
         @if (subItem.path) {
           <div
+            (click)="onClick($event, subItem, ClickType.DROPDOWN_ITEM)"
             class="sidebar-dropdown-item sidebar-dropdown-subitem"
             [routerLink]="subItem.path"
             routerLinkActive="active"

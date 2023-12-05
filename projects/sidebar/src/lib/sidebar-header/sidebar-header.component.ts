@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { SidebarService } from '../sidebar.service';
+import { SidebarService } from '../common/services/sidebar.service';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
