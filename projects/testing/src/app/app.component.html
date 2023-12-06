@@ -26,17 +26,41 @@
 <div style="display: flex; height: 100vh; overflow: hidden">
   <c-sidebar
     height="100vh"
-    [showHeader]="true"
+    [logoConfig]="{
+      logo: {
+        url: './../assets/full-logo.png',
+        height: '50px',
+        width: 'auto'
+      },
+      collapsedLogo: {
+        url: './../assets/full-logo.png',
+        height: '30px',
+        width: 'auto'
+      }
+    }"
     [sidebarConfig]="largeSidebar"
     [smallSidebarConfig]="smallSidebar"
     [smallSidebarDefaultIndex]="0"
     (smallSidebarItemClick)="onSelectSmallSidebar($event)"
     (sidebarItemClick)="onSelectSidebar($event)"
     (onItemClick)="onSidebarItemClick($event)"
-  />
+  >
+    <!-- <ng-container smallSidebar>
+      <p>Custom content</p>
+    </ng-container> -->
+
+    <ng-container header>
+      <div class="search-field">
+        <input type="text" placeholder="Search anything here..." />
+      </div>
+    </ng-container>
+    <!-- <ng-container footer>
+      <h2>Custom footer</h2>
+    </ng-container> -->
+  </c-sidebar>
 
   <div style="overflow: auto; width: 100%">
-    <h1>Ovo je naslov</h1>
-    <div style="height: 2000px; background-color: gray; width: 20px; margin-left: 100px"></div>
+    <h1>Title</h1>
+    <div style="height: 2000px; width: 20px; margin-left: 100px"></div>
   </div>
 </div>

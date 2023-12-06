@@ -1,18 +1,25 @@
 <article
   class="ngxCommander-small-sidebar"
   [style]="{
-    height: config?.style?.height
+    height: config['style']?.height,
+    width: config['style']?.width
   }"
 >
-  @for (item of config?.routes; track item.title; let index = $index) {
-    <div
-      class="item"
-      (click)="onSelectItem($event, index, item)"
-      [class.active]="activeItemIndex === index"
-      [appTooltip]="item.title"
-      [ngClass]="item.class"
-    >
-      <span>{{ item.icon }}</span>
-    </div>
+  <section #contentRef>
+    <ng-content />
+  </section>
+
+  @if (contentRef.childNodes.length === 0) {
+    @for (item of config['routes']; track item.title; let index = $index) {
+      <div
+        class="item"
+        (click)="onSelectItem($event, index, item)"
+        [class.active]="activeItemIndex === index"
+        [appTooltip]="item.title"
+        [ngClass]="item.class"
+      >
+        <span>{{ item.icon }}</span>
+      </div>
+    }
   }
 </article>

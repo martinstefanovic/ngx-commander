@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { SmallSidebarConfig } from 'projects/sidebar/src/lib/common/models/small-sidebar-config.model';
+import { LargeSidebarConfig, SidebarTheme } from 'projects/sidebar/src/public-api';
+import { SIDEBAR_ROUTES } from './sidebar-routes/sidebar-routes';
+import { SMALL_SIDEBAR_ROUTES } from './sidebar-routes/small-sidebar-routes';
 
 @Component({
   selector: 'app-root',
@@ -7,213 +11,29 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testing';
-  smallSidebar = {
-    routes: [
-      {
-        title: 'Sidebar example',
-        icon: 'SE',
-      },
-      {
-        title: 'Social Media',
-        icon: 'SM',
-      },
-    ],
+  smallSidebar: SmallSidebarConfig = {
+    style: {
+      width: '55px',
+    },
+    routes: SMALL_SIDEBAR_ROUTES,
   };
-  largeSidebar: {
-    theme: 'classic';
-    title: string;
-    routes: any[];
-  } = {
-    theme: 'classic',
+  largeSidebar: LargeSidebarConfig = {
+    theme: SidebarTheme.Angular,
     title: 'Sidebar example',
-    routes: [
-      {
-        title: 'Introduction',
+    layout: {
+      header: {
+        show: true,
+        flex: 1,
       },
-      {
-        path: ['statistics'],
-        title: 'Dashboard',
-        icon: 'heroPresentationChartBar',
+      body: {
+        flex: 8,
       },
-      {
-        path: ['statistics'],
-        title: 'Dashboard',
-        icon: 'heroPresentationChartBar',
+      footer: {
+        show: true,
+        flex: 1,
       },
-      {
-        path: ['statistics'],
-        title: 'Dashboard',
-        icon: 'heroPresentationChartBar',
-      },
-      {
-        path: ['statistics'],
-        title: 'Dashboard',
-        icon: 'heroPresentationChartBar',
-      },
-      {
-        path: ['statistics'],
-        title: 'BG Changed',
-        icon: 'heroPresentationChartBar',
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        class: 'red',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-          {
-            path: ['statistics'],
-            title: 'Users',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-          {
-            path: ['statistics'],
-            title: 'Users',
-            icon: 'heroUsers',
-          },
-          {
-            path: ['statistics'],
-            title: 'Dashboards',
-            icon: 'heroUsers',
-          },
-          {
-            title: 'Subdropdown',
-            icon: 'heroUsers',
-            children: [
-              {
-                path: ['statistics'],
-                title: 'Subsubitem',
-                icon: 'heroUsers',
-              },
-            ],
-          },
-          {
-            path: ['statistics'],
-            title: 'Users',
-            icon: 'heroUsers',
-          },
-          {
-            path: ['statistics'],
-            title: 'Dashboards',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'Users',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-      {
-        title: 'LAST',
-        icon: 'heroUsers',
-        children: [
-          {
-            path: ['statistics'],
-            title: 'Clients',
-            icon: 'heroUsers',
-          },
-        ],
-      },
-    ],
+    },
+    routes: SIDEBAR_ROUTES,
   };
 
   /* ====================================

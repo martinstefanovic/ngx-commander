@@ -1,3 +1,10 @@
 .bg-transparent {
   background-color: transparent !important;
 }
+
+.wrapper:not(:empty) {
+  width: 100%;
+}
+.wrapper:not(:empty) + .default {
+  display: none;
+}

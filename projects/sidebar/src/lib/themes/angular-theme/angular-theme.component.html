@@ -3,7 +3,24 @@
   [ngClass]="{ closed: isSidebarClosed }"
   [ngStyle]="{ height: config?.style?.height ?? '90vh' }"
 >
-  <div class="angular-sidebar-body">
+  <!-- HEADER -->
+  @if (config?.layout?.header?.show) {
+    <div class="angular-sidebar-header" [style.flex]="config?.layout?.header?.flex">
+      <div class="wrapper">
+        <ng-content select="[header]" />
+      </div>
+      <div class="default">
+        @if (config?.title) {
+          <h3 class="sidebar-title">
+            {{ config?.title }}
+          </h3>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- BODY -->
+  <div class="angular-sidebar-body" [style.flex]="config?.layout?.body?.flex">
     <section class="screen screen-1" [ngClass]="{ 'hide-screen': isDropdownOpened }">
       @for (menuItem of config?.routes; track menuItem; let i = $index) {
         @if (menuItem?.path) {
@@ -35,4 +52,13 @@
       }
     </section>
   </div>
+
+  <!-- FOOTER -->
+  @if (config?.layout?.footer?.show) {
+    <div class="angular-sidebar-footer" [style.flex]="config?.layout?.footer?.flex">
+      <div class="wrapper">
+        <ng-content select="[footer]" />
+      </div>
+    </div>
+  }
 </main>

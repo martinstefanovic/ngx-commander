@@ -1,12 +1,12 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { SidebarService } from '../../common/services/sidebar.service';
 import { LargeSidebarConfig } from '../../common/models/large-sidebar-config.model';
 import { SidebarTitleComponent } from '../../components/sidebar-title/sidebar-title.component';
 import { SidebarItemComponent } from '../../components/sidebar-item/sidebar-item.component';
 import { SidebarDropdownComponent } from '../../components/sidebar-dropdown/sidebar-dropdown.component';
 import { CommonModule } from '@angular/common';
-import { detectOS, setOsShortcut } from '../../common/utils/osUtils';
-import { OS } from '../../common/enums/os.enum';
+import { setOsShortcut } from '../../common/utils/osUtils';
+import { TooltipDirective } from '../../common/ui/tooltip/tooltip.directive';
 
 @Component({
   selector: 'c-classic-theme',
@@ -14,7 +14,7 @@ import { OS } from '../../common/enums/os.enum';
   styleUrls: ['./classic-theme.component.scss', '../../../../style.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [SidebarTitleComponent, SidebarItemComponent, SidebarDropdownComponent, CommonModule],
+  imports: [SidebarTitleComponent, SidebarItemComponent, SidebarDropdownComponent, CommonModule, TooltipDirective],
 })
 export class ClassicThemeComponent implements OnInit {
   /**

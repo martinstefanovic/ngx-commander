@@ -1,37 +1,55 @@
 <div style="display: flex; overflow: hidden" [style.height]="height">
   <c-responsive-container>
     <div>
-      @if (showHeader) {
-        <c-sidebar-header
-          [config]="{
-            logo: {
-              url: './../assets/full-logo.png',
-              height: '50px',
-              width: 'auto'
-            },
-            collapsedLogo: {
-              url: './../assets/full-logo.png',
-              height: '30px',
-              width: 'auto'
-            }
-          }"
-        />
+      @if (logoConfig) {
+        <c-sidebar-header [config]="logoConfig" />
       }
 
       <div style="display: flex; height: 100%">
         @if (smSidebarConfig) {
-          <c-small-sidebar [config]="smSidebarConfig" [defaultSelectedIndex]="smallSidebarDefaultIndex" />
+          <c-small-sidebar [config]="smSidebarConfig" [defaultSelectedIndex]="smallSidebarDefaultIndex">
+            <ng-content select="[smallSidebar]" />
+          </c-small-sidebar>
         }
+
+        <ng-template #header>
+          <ng-content select="[header]" />
+        </ng-template>
+        <ng-template #body>
+          <ng-content select="[body]" />
+        </ng-template>
+        <ng-template #footer>
+          <ng-content select="[footer]" />
+        </ng-template>
         @if (lgSidebarConfig) {
           @switch (lgSidebarConfig.theme) {
-            @case ('classic') {
-              <c-classic-theme [config]="lgSidebarConfig" />
+            @case (SidebarTheme.Classic) {
+              <c-classic-theme [config]="lgSidebarConfig">
+                @if (lgSidebarConfig['layout']?.header?.show) {
+                  <ng-container header>
+                    <ng-container *ngTemplateOutlet="header" />
+                  </ng-container>
+                }
+                @if (lgSidebarConfig['layout']?.footer?.show) {
+                  <ng-container footer>
+                    <ng-container *ngTemplateOutlet="footer" />
+                  </ng-container>
+                }
+              </c-classic-theme>
             }
-            @case ('angular') {
-              <c-angular-theme [config]="lgSidebarConfig" />
-            }
-            @default {
-              <c-classic-theme [config]="lgSidebarConfig" />
+            @case (SidebarTheme.Angular) {
+              <c-angular-theme [config]="lgSidebarConfig">
+                @if (lgSidebarConfig['layout']?.header?.show) {
+                  <ng-container header>
+                    <ng-container [ngTemplateOutlet]="header" />
+                  </ng-container>
+                }
+                @if (lgSidebarConfig['layout']?.footer?.show) {
+                  <ng-container footer>
+                    <ng-container *ngTemplateOutlet="footer" />
+                  </ng-container>
+                }
+              </c-angular-theme>
             }
           }
         }

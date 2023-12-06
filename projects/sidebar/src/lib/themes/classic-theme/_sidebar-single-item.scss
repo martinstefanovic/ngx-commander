@@ -9,6 +9,7 @@
     height: 3rem;
     background-color: var(--ngx-commander-large-sidebar-item-background);
     border-radius: 10px;
+    position: relative;
 
     &:hover {
       .item-title {

@@ -1,6 +1,7 @@
 export interface SmallSidebarConfig {
   style?: {
     height?: string;
+    width?: string;
   };
   routes: {
     title: string;

@@ -3,23 +3,41 @@
   [ngClass]="{ closed: isSidebarClosed }"
   [ngStyle]="{ height: config?.style?.height ?? 'calc(100vh - 65px)' }"
 >
-  <div class="classic-sidebar-header">
-    @if (config?.title) {
-      <h3 class="sidebar-title">
-        {{ config?.title }}
-      </h3>
-    }
-  </div>
-  <div class="classic-sidebar-body">
+  <!-- HEADER -->
+  @if (config?.layout?.header?.show) {
+    <div class="classic-sidebar-header" [style.flex]="config?.layout?.header?.flex">
+      <div class="wrapper">
+        <ng-content select="[header]" />
+      </div>
+      <div class="default">
+        @if (config?.title) {
+          <h3 class="sidebar-title">
+            {{ config?.title }}
+          </h3>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- BODY -->
+  <div class="classic-sidebar-body" [style.flex]="config?.layout?.body?.flex">
     @for (menuItem of config?.routes; track menuItem; let i = $index) {
       <app-sidebar-item [isSidebarClosed]="isSidebarClosed" [item]="menuItem" />
       <app-sidebar-dropdown [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
       <app-sidebar-title [item]="menuItem" [isSidebarClosed]="isSidebarClosed" />
     }
   </div>
-  <div class="classic-sidebar-footer" (click)="onToggleSidebar()">
-    <kbd class="button-key">{{ osKey }}</kbd>
-    <kbd class="button-key">J</kbd>
-    <span [class.hide]="isSidebarClosed">Collapse sidebar</span>
-  </div>
+
+  <!-- FOOTER -->
+  @if (config?.layout?.footer?.show) {
+    <div class="classic-sidebar-footer" [style.flex]="config?.layout?.footer?.flex">
+      <div class="wrapper">
+        <ng-content select="[footer]" />
+      </div>
+      <div class="default" appTooltip="Collapse sidebar" (click)="onToggleSidebar()">
+        <kbd class="button-key">{{ osKey }}</kbd>
+        <kbd class="button-key">J</kbd>
+      </div>
+    </div>
+  }
 </main>
