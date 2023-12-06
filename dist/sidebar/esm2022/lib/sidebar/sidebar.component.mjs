@@ -1,0 +1,21 @@
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/common";
+import * as i2 from "../themes/classic-theme/classic-theme.component";
+import * as i3 from "../themes/angular-theme/angular-theme.component";
+export class SidebarComponent {
+    constructor() {
+        this.isSidebarClosed = false;
+    }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: SidebarComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.3", type: SidebarComponent, selector: "c-sidebar", inputs: { isSidebarClosed: "isSidebarClosed", config: "config" }, ngImport: i0, template: "<span [ngSwitch]=\"config?.theme\">\n  <p *ngSwitchCase=\"'classic'\">\n    <c-classic-theme [config]=\"config\" />\n  </p>\n  <p *ngSwitchCase=\"'angular'\">\n    <c-angular-theme [config]=\"config\" />\n  </p>\n  <p *ngSwitchDefault>\n    <c-classic-theme [config]=\"config\" />\n  </p>\n</span>\n", dependencies: [{ kind: "directive", type: i1.NgSwitch, selector: "[ngSwitch]", inputs: ["ngSwitch"] }, { kind: "directive", type: i1.NgSwitchCase, selector: "[ngSwitchCase]", inputs: ["ngSwitchCase"] }, { kind: "directive", type: i1.NgSwitchDefault, selector: "[ngSwitchDefault]" }, { kind: "component", type: i2.ClassicThemeComponent, selector: "c-classic-theme", inputs: ["isSidebarClosed", "config"] }, { kind: "component", type: i3.AngularThemeComponent, selector: "c-angular-theme", inputs: ["isSidebarClosed", "config"] }], encapsulation: i0.ViewEncapsulation.None }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: SidebarComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'c-sidebar', encapsulation: ViewEncapsulation.None, template: "<span [ngSwitch]=\"config?.theme\">\n  <p *ngSwitchCase=\"'classic'\">\n    <c-classic-theme [config]=\"config\" />\n  </p>\n  <p *ngSwitchCase=\"'angular'\">\n    <c-angular-theme [config]=\"config\" />\n  </p>\n  <p *ngSwitchDefault>\n    <c-classic-theme [config]=\"config\" />\n  </p>\n</span>\n" }]
+        }], propDecorators: { isSidebarClosed: [{
+                type: Input
+            }], config: [{
+                type: Input
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2lkZWJhci5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9zaWRlYmFyL3NyYy9saWIvc2lkZWJhci9zaWRlYmFyLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3NpZGViYXIvc3JjL2xpYi9zaWRlYmFyL3NpZGViYXIuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxLQUFLLEVBQUUsaUJBQWlCLEVBQUUsTUFBTSxlQUFlLENBQUM7Ozs7O0FBUXBFLE1BQU0sT0FBTyxnQkFBZ0I7SUFMN0I7UUFNVyxvQkFBZSxHQUFHLEtBQUssQ0FBQztLQUVsQzs4R0FIWSxnQkFBZ0I7a0dBQWhCLGdCQUFnQixtSENSN0IsNlNBV0E7OzJGREhhLGdCQUFnQjtrQkFMNUIsU0FBUzsrQkFDRSxXQUFXLGlCQUVOLGlCQUFpQixDQUFDLElBQUk7OEJBRzVCLGVBQWU7c0JBQXZCLEtBQUs7Z0JBQ0csTUFBTTtzQkFBZCxLQUFLIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBJbnB1dCwgVmlld0VuY2Fwc3VsYXRpb24gfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IExhcmdlU2lkZWJhckNvbmZpZyB9IGZyb20gJy4uL2NvbW1vbi9tb2RlbHMvbGFyZ2Utc2lkZWJhci1jb25maWcubW9kZWwnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdjLXNpZGViYXInLFxuICB0ZW1wbGF0ZVVybDogJy4vc2lkZWJhci5jb21wb25lbnQuaHRtbCcsXG4gIGVuY2Fwc3VsYXRpb246IFZpZXdFbmNhcHN1bGF0aW9uLk5vbmUsXG59KVxuZXhwb3J0IGNsYXNzIFNpZGViYXJDb21wb25lbnQge1xuICBASW5wdXQoKSBpc1NpZGViYXJDbG9zZWQgPSBmYWxzZTtcbiAgQElucHV0KCkgY29uZmlnPzogTGFyZ2VTaWRlYmFyQ29uZmlnO1xufVxuIiwiPHNwYW4gW25nU3dpdGNoXT1cImNvbmZpZz8udGhlbWVcIj5cbiAgPHAgKm5nU3dpdGNoQ2FzZT1cIidjbGFzc2ljJ1wiPlxuICAgIDxjLWNsYXNzaWMtdGhlbWUgW2NvbmZpZ109XCJjb25maWdcIiAvPlxuICA8L3A+XG4gIDxwICpuZ1N3aXRjaENhc2U9XCInYW5ndWxhcidcIj5cbiAgICA8Yy1hbmd1bGFyLXRoZW1lIFtjb25maWddPVwiY29uZmlnXCIgLz5cbiAgPC9wPlxuICA8cCAqbmdTd2l0Y2hEZWZhdWx0PlxuICAgIDxjLWNsYXNzaWMtdGhlbWUgW2NvbmZpZ109XCJjb25maWdcIiAvPlxuICA8L3A+XG48L3NwYW4+XG4iXX0=

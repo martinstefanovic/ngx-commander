@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'mixins';
+@import 'cdk';
+@import 'utility';
+
+* {
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
