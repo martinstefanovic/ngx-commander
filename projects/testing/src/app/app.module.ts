@@ -32,10 +32,7 @@ import {
     BrowserModule,
     AppRoutingModule,
     SidebarModule,
-    SidebarHeaderComponent,
     SidebarComponent,
-    SmallSidebarComponent,
-    ResponsiveContainerComponent,
     NgIconsModule.withIcons({
       heroUsers,
       heroPresentationChartBar,
