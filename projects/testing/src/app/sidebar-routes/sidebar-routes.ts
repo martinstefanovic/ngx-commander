@@ -5,61 +5,56 @@ export const SIDEBAR_ROUTES = [
   {
     path: ['statistics'],
     title: 'Overview',
-    icon: 'heroUsers',
+    icon: 'heroPresentationChartBar',
     class: 'highlighted',
   },
   {
     path: ['statistics'],
     title: 'Inbox',
-    icon: 'heroUsers',
-  },
-  {
-    path: ['statistics'],
-    title: 'Maintenance',
-    icon: 'heroUsers',
+    icon: 'heroInboxArrowDown',
   },
   {
     title: 'Management',
   },
   {
     title: 'Orders',
-    icon: 'heroUsers',
+    icon: 'heroBuildingStorefront',
     children: [
       {
         path: ['statistics'],
         title: 'Order Management',
-        icon: 'heroUsers',
+        icon: 'heroBarsArrowUp',
       },
       {
         path: ['statistics'],
         title: 'Order Setting',
-        icon: 'heroUsers',
+        icon: 'heroCog6Tooth',
       },
     ],
   },
   {
     title: 'Rule Management',
-    icon: 'heroUsers',
+    icon: 'heroAdjustmentsHorizontal',
     children: [
       {
         path: ['statistics'],
         title: 'Decision Rule',
-        icon: 'heroUsers',
+        icon: 'heroCodeBracketSquare',
       },
       {
         path: ['statistics'],
         title: 'Risk Grading',
-        icon: 'heroUsers',
+        icon: 'heroCodeBracketSquare',
       },
       {
         path: ['statistics'],
         title: 'Scoring',
-        icon: 'heroUsers',
+        icon: 'heroCodeBracketSquare',
       },
       {
         path: ['statistics'],
         title: 'Decision Flow',
-        icon: 'heroUsers',
+        icon: 'heroCodeBracketSquare',
       },
     ],
   },
@@ -69,7 +64,7 @@ export const SIDEBAR_ROUTES = [
   {
     path: ['statistics'],
     title: 'Organisation Settings',
-    icon: 'heroUsers',
+    icon: 'heroCodeBracketSquare',
   },
   {
     title: 'Apps & Perks',
@@ -78,28 +73,28 @@ export const SIDEBAR_ROUTES = [
       {
         path: ['statistics'],
         title: 'App One',
-        icon: 'heroUsers',
+        icon: 'heroCodeBracketSquare',
       },
       {
         path: ['statistics'],
         title: 'App Two',
-        icon: 'heroUsers',
+        icon: 'heroCodeBracketSquare',
       },
     ],
   },
   {
     title: 'Tax Forms',
-    icon: 'heroUsers',
+    icon: 'heroPencilSquare',
     children: [
       {
         path: ['statistics'],
         title: 'Form One',
-        icon: 'heroUsers',
+        icon: 'heroPencilSquare',
       },
       {
         path: ['statistics'],
         title: 'Form Two',
-        icon: 'heroUsers',
+        icon: 'heroPencilSquare',
       },
     ],
   },

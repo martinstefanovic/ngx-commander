@@ -3,8 +3,8 @@
 .highlighted {
   &::after {
     content: 'NEW';
-    background-color: #fe7649;
-    color: #fff;
+    background-color: #c5f1d9;
+    color: black;
     border-radius: 10px;
     position: absolute;
     right: 0;
@@ -30,6 +30,42 @@
     border-radius: 5px;
     &::placeholder {
       color: rgba(128, 128, 128, 0.645);
+    }
+  }
+}
+
+.user-data {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+
+  .avatar {
+    background-image: url('https://randomuser.me/api/portraits/men/44.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    background: linear-gradient(120deg, #fa2c05 20%, #f637e3 40%, #8514f5 200%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+  }
+  .data {
+    display: flex;
+    flex-flow: column;
+    margin-left: 0.5rem;
+    h3 {
+      font-size: 12px;
+    }
+    span {
+      display: block;
+      margin: 0;
+      margin-top: 0.1rem;
+      color: rgba(128, 128, 128, 0.862);
+      font-size: 11px;
     }
   }
 }

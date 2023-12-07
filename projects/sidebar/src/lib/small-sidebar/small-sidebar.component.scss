@@ -39,7 +39,7 @@
     border-radius: 10px;
     margin-bottom: 10px;
     cursor: pointer;
-    border: 2px solid #fff;
+    border: 2px solid var(--ngx-commander-small-sidebar-background);
     outline: 2px solid transparent;
     transition: all 0.2s;
     span {

@@ -29,7 +29,7 @@ export class AppComponent {
         flex: 8,
       },
       footer: {
-        show: true,
+        show: false,
         flex: 1,
       },
     },

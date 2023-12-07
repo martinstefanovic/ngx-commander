@@ -39,7 +39,6 @@
       }
     }"
     [sidebarConfig]="largeSidebar"
-    [smallSidebarConfig]="smallSidebar"
     [smallSidebarDefaultIndex]="0"
     (smallSidebarItemClick)="onSelectSmallSidebar($event)"
     (sidebarItemClick)="onSelectSidebar($event)"
@@ -54,13 +53,19 @@
         <input type="text" placeholder="Search anything here..." />
       </div>
     </ng-container>
-    <!-- <ng-container footer>
-      <h2>Custom footer</h2>
-    </ng-container> -->
+    <ng-container footer>
+      <section class="user-data">
+        <div class="avatar">PB</div>
+        <div class="data">
+          <h3>Phoenix Baker</h3>
+          <span>phoenix&#64;gmail.com</span>
+        </div>
+      </section>
+    </ng-container>
   </c-sidebar>
 
   <div style="overflow: auto; width: 100%">
-    <h1>Title</h1>
+    <!-- <h1>Title</h1> -->
     <div style="height: 2000px; width: 20px; margin-left: 100px"></div>
   </div>
 </div>

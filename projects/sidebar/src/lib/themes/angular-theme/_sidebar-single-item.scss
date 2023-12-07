@@ -7,7 +7,7 @@
     cursor: pointer;
     color: var(--ngx-commander-large-sidebar-text);
     background-color: var(--ngx-commander-large-sidebar-item-background);
-    border-left: 1px solid #e4e3e6;
+    border-left: 1px solid #efeff0;
     position: relative;
     &::before {
       content: '';
@@ -49,10 +49,10 @@
       &::before {
         opacity: 1;
         height: 90%;
-        background: linear-gradient(0deg, #8514f5 0%, oklch(69.02% 0.277 332.77) 100%);
+        background: var(--ngx-commander-large-sidebar-active-icon);
       }
       .item-title {
-        color: #d234c2;
+        color: var(--ngx-commander-large-sidebar-active-text);
         font-weight: bold;
       }
     }

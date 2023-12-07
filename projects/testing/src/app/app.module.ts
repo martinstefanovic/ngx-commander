@@ -12,7 +12,19 @@ import {
 } from 'projects/sidebar/src/public-api';
 
 import { NgIconsModule } from '@ng-icons/core';
-import { heroUsers, heroPresentationChartBar } from '@ng-icons/heroicons/outline';
+import {
+  heroUsers,
+  heroPresentationChartBar,
+  heroChartPie,
+  heroInboxArrowDown,
+  heroBuildingStorefront,
+  heroBarsArrowUp,
+  heroCog6Tooth,
+  heroAdjustmentsHorizontal,
+  heroCodeBracketSquare,
+  heroCubeTransparent,
+  heroPencilSquare,
+} from '@ng-icons/heroicons/outline';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +36,19 @@ import { heroUsers, heroPresentationChartBar } from '@ng-icons/heroicons/outline
     SidebarComponent,
     SmallSidebarComponent,
     ResponsiveContainerComponent,
-    NgIconsModule.withIcons({ heroUsers, heroPresentationChartBar }),
+    NgIconsModule.withIcons({
+      heroUsers,
+      heroPresentationChartBar,
+      heroChartPie,
+      heroInboxArrowDown,
+      heroBuildingStorefront,
+      heroBarsArrowUp,
+      heroCog6Tooth,
+      heroAdjustmentsHorizontal,
+      heroCodeBracketSquare,
+      heroCubeTransparent,
+      heroPencilSquare,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
