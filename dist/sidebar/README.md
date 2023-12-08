@@ -1,4 +1,4 @@
-# Intro
+# Angular Sidebar
 
 ![](https://raw.githubusercontent.com/martinstefanovic/ngx-commander/main/projects/sidebar/src/assets/sidebar.jpeg)
 
@@ -25,6 +25,8 @@ Don't forget to include `NgIconsModule`. You can read more about it [here](https
 ## Usage
 
 ### Example
+
+You can find example [here](https://github.com/martinstefanovic/ngx-commander/tree/main/projects/testing, 'here')
 
 ```
   <c-sidebar
@@ -132,7 +134,7 @@ If you dont want to show logo part of sidebar just dont provide `logoConfig` pro
 | :---------- | :------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | onItemClick | When item is selected. This include both small sidebar and regular sidebar items | `Object` of selected item with type of selected item and type of sidebar. |
 
-#### Sidebar item types
+### Sidebar item types
 
 ```
   <c-sidebar
@@ -148,7 +150,7 @@ If you dont want to show logo part of sidebar just dont provide `logoConfig` pro
 
 In routes you can pass diferent types of items.
 
-### Section title
+#### Section title
 
 ```
   {
@@ -156,7 +158,7 @@ In routes you can pass diferent types of items.
   }
 ```
 
-### Single sidebar item
+#### Single sidebar item
 
 ```
   {
@@ -166,7 +168,7 @@ In routes you can pass diferent types of items.
   }
 ```
 
-### Sidebar dropdown
+#### Sidebar dropdown
 
 ```
   {
