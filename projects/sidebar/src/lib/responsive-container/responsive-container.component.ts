@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { NgIconsModule } from '@ng-icons/core';
+import { BurgerMenuPosition } from '../common/models/burger-menu-position.model';
 
 @Component({
   selector: 'c-responsive-container',
@@ -10,7 +11,7 @@ import { NgIconsModule } from '@ng-icons/core';
   imports: [CommonModule, NgIconsModule],
 })
 export class ResponsiveContainerComponent {
-  @Input() mobileMenuIcon = 'heroBars4';
+  @Input() burgerMenuIcon!: string;
   mobileIsSidebarClosed = false;
   isMobile = window.innerWidth < 550;
 }

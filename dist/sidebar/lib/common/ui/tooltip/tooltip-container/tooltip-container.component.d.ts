@@ -8,5 +8,5 @@ export declare class TooltipContainerComponent {
     get asTemplate(): TemplateRef<void> | false;
     constructor(tooltipData: TooltipData);
     static ɵfac: i0.ɵɵFactoryDeclaration<TooltipContainerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TooltipContainerComponent, "app-tooltip-container", never, {}, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TooltipContainerComponent, "app-tooltip-container", never, {}, {}, never, never, true, never>;
 }

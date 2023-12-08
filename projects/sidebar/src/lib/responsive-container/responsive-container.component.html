@@ -5,5 +5,18 @@
   <div class="CMND-backdrop" (click)="mobileIsSidebarClosed = !mobileIsSidebarClosed"></div>
 </main>
 <button class="CMND-mobile-sidebar-btn" (click)="mobileIsSidebarClosed = !mobileIsSidebarClosed">
-  <ng-icon class="icon" size="20" [name]="mobileMenuIcon" />
+  @if (burgerMenuIcon) {
+    <ng-icon class="icon" size="20" [name]="burgerMenuIcon" />
+  } @else {
+    <svg xmlns="http://www.w3.org/2000/svg" width="25px" class="ionicon" viewBox="0 0 512 512">
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-miterlimit="10"
+        stroke-width="32"
+        d="M80 160h352M80 256h352M80 352h352"
+      />
+    </svg>
+  }
 </button>

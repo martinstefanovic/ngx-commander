@@ -16,5 +16,5 @@ export declare class TooltipDirective {
     private attachTooltip;
     private getPositionStrategy;
     static ɵfac: i0.ɵɵFactoryDeclaration<TooltipDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<TooltipDirective, "[appTooltip]", never, { "appTooltip": { "alias": "appTooltip"; "required": false; }; "disableTooltip": { "alias": "disableTooltip"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<TooltipDirective, "[appTooltip]", never, { "appTooltip": { "alias": "appTooltip"; "required": false; }; "disableTooltip": { "alias": "disableTooltip"; "required": false; }; }, {}, never, never, true, never>;
 }

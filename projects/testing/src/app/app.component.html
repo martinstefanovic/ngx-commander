@@ -1,48 +1,12 @@
-<!-- <div style="display: flex; height: 100vh; overflow: hidden">
-  <c-responsive-container>
-    <div style="height: 100vh">
-      <c-sidebar-header
-        [config]="{
-          logo: {
-            url: './../assets/full-logo.png',
-            height: '50px',
-            width: 'auto'
-          },
-          collapsedLogo: {
-            url: './../assets/full-logo.png',
-            height: '30px',
-            width: 'auto'
-          }
-        }"
-      />
-      <div style="display: flex; height: 100%">
-        <c-small-sidebar [config]="smallSidebar" />
-        <c-sidebar [config]="largeSidebar" />
-      </div>
-    </div>
-  </c-responsive-container>
-</div> -->
-
 <div style="display: flex; height: 100vh; overflow: hidden">
   <c-sidebar
     height="100vh"
-    [logoConfig]="{
-      logo: {
-        url: './../assets/full-logo.png',
-        height: '50px',
-        width: 'auto'
-      },
-      collapsedLogo: {
-        url: './../assets/full-logo.png',
-        height: '30px',
-        width: 'auto'
-      }
-    }"
+    [logoConfig]="logoConfig"
+    burgerMenuIcon="heroBars4"
     [sidebarConfig]="largeSidebar"
     [smallSidebarConfig]="smallSidebar"
     [smallSidebarDefaultIndex]="0"
     (smallSidebarItemClick)="onSelectSmallSidebar($event)"
-    (sidebarItemClick)="onSelectSidebar($event)"
     (onItemClick)="onSidebarItemClick($event)"
   >
     <!-- <ng-container smallSidebar>

@@ -4,115 +4,169 @@
 
 ## Installation
 
-First you need to install package with:
+First you need to install package for sidebar and icons:
 
 ```
-npm i @martinstf/ngx-commander-sidebar
+npm i @martinstf/ngx-commander-sidebar @ng-icons/core @ng-icons/heroicons
 ```
 
-In your modul import `SidebarModule`
+In your module or standalone component you need to import `SidebarComponent`
 
 ```
-@NgModule({
-  imports: [...],
-  exports: [
-    ...
-    SidebarModule,
-    ...
-  ],
-  providers: [...],
-})
+    imports: [
+      ...
+      SidebarComponent,
+      ...
+    ],
 ```
 
-For icons you need to install
-
-```
-npm i @ng-icons/core
-```
-
-... and include `NgIconsModule`. You can read more about it [here](https://www.npmjs.com/package/@ng-icons/core 'here')
+Don't forget to include `NgIconsModule`. You can read more about it [here](https://www.npmjs.com/package/@ng-icons/core 'here')
 
 ## Usage
 
-### Components
-
-#### Sidebar header
+### Example
 
 ```
-<c-sidebar-header
-        [config]="{
-          logo: {
-            url: 'logo.png',
-            height: '50px',
-            width: 'auto',
-          },
-          collapsedLogo: {
-            url: 'small-logo.png',
-            height: '35px',
-            width: 'auto',
-          }
-        }" />
-```
-
-| Name   | Type     | Description                                                                                                          |
-| :----- | :------- | -------------------------------------------------------------------------------------------------------------------- |
-| config | `object` | You can set logo options for expanded sidebar but also you can set different logo options when sidebar is collapsed. |
-
-#### Small sidebar
-
-```
-<c-small-sidebar
-    [config]="{
-        routes: [{
-			title: 'My item',
-			icon: 'MI'
-		}]
+  <c-sidebar
+    height="100vh"
+    [logoConfig]="{
+      logo: {
+        url: './../assets/full-logo.png',
+        height: '50px',
+        width: 'auto'
+      },
+      collapsedLogo: {
+        url: './../assets/full-logo.png',
+        height: '30px',
+        width: 'auto'
+      }
     }"
-    [defaultSelectedIndex]="0"
-    (selectItem)="onSlectSmallSidebarItem($event)"
-/>
+    [sidebarConfig]="largeSidebar"
+    [smallSidebarConfig]="smallSidebar"
+    [smallSidebarDefaultIndex]="0"
+    (onItemClick)="onSidebarItemClick($event)"
+  />
 ```
 
-##### Options
+### Options
 
-| Name                 | Type     | Description                                              | Default     |
-| :------------------- | :------- | -------------------------------------------------------- | ----------- |
-| config               | `object` | Config contains `routes` key with list of sidebar items. | `undefined` |
-| defaultSelectedIndex | `number` | Predefine selected item. Default is                      | `undefined` |
+| Name                     | Type     | Description                                                                                                          | Default     |
+| :----------------------- | :------- | -------------------------------------------------------------------------------------------------------------------- | ----------- |
+| height                   | `string` | Sidebar height. You can use any CSS unit here.                                                                       |
+| logoConfig               | `object` | You can set logo options for expanded sidebar but also you can set different logo options when sidebar is collapsed. |
+| smallSidebarConfig       | `object` | Config contains `routes` key with list of small sidebar items.                                                       | `undefined` |
+| smallSidebarDefaultIndex | `number` | Predefine selected item for small sidebar.                                                                           | `undefined` |
+| sidebarConfig            | `object` | Config contains `routes` key with list of sidebar items and `title` for sidebar title if you need it.                | `undefined` |
+
+### Configuration
+
+##### Theme
+
+You have SidebarTheme enum with all suported themes for sidebar.
+
+##### Layout
+
+If you dont want to show sidebar (e.g. when you just want small sidebar) just dont provide `sidebarConfig` property to `<c-sidebar/>` component.
+
+You can adjust height of each sidebar part (header, body, footer) with CSS flex propery. Default values are shown in exaple below.
+Also if you dont need header or footer in sidebar you can set show key to false. Default is true for all.
+
+```
+  largeSidebar: LargeSidebarConfig = {
+    theme: SidebarTheme.Angular,
+    title: 'Sidebar example',
+    layout: {
+      header: {
+        show: true,
+        flex: 1,
+      },
+      body: {
+        flex: 8,
+      },
+      footer: {
+        show: false,
+        flex: 1,
+      },
+    },
+    routes: [...],
+  };
+```
+
+##### Small sidebar
+
+If you dont want to show small sidebar just dont provide `smallSidebarConfig` property to `<c-sidebar/>` component.
+
+```
+  smallSidebar: SmallSidebarConfig = {
+    style: {
+      width: '55px',
+    },
+    routes: [...],
+  };
+```
+
+##### Logo config
+
+If you dont want to show logo part of sidebar just dont provide `logoConfig` property to `<c-sidebar/>` component.
+
+`logo` config will be shown when sidebar is expanded and `collapsedLogo` when sidebar is colapsed.
+
+```
+  logoConfig: SidebarLogoConfig = {
+    logo: {
+      url: './../assets/full-logo.png',
+      height: '50px',
+      width: 'auto'
+    },
+    collapsedLogo: {
+      url: './../assets/full-logo.png',
+      height: '30px',
+      width: 'auto'
+    }
+  }
+```
 
 ##### Events
 
-| Name       | Description           | Return                    |
-| :--------- | :-------------------- | ------------------------- |
-| selectItem | When item is selected | `Object` of selected item |
+| Name        | Description                                                                      | Return                                                                    |
+| :---------- | :------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| onItemClick | When item is selected. This include both small sidebar and regular sidebar items | `Object` of selected item with type of selected item and type of sidebar. |
 
-#### Large sidebar
+#### Sidebar item types
 
 ```
-<c-large-sidebar
-    [config]="{
-		title: 'My sidebar title',
-		routes: [
-			...
-		]
-	}"
-    [isSidebarClosed]="isSidebarClosed"
-/>
+  <c-sidebar
+      [sidebarConfig]="{
+      ...
+      routes: [
+        // Sidebar items
+        ...
+      ]
+    }"
+  />
 ```
 
 In routes you can pass diferent types of items.
 
-First type is **single sidebar item**:
+### Section title
 
 ```
-{
-        path: ['statistics'],
-        title: 'Statistics',
-        icon: 'heroArrowTrendingUp', // Icon from @ng-icons/core
-},
+  {
+    title: 'General'
+  }
 ```
 
-Second type is **sidebar dropdown** with single items:
+### Single sidebar item
+
+```
+  {
+    path: ['statistics','users'], // This array will be transformed to 'statistics/users'
+    title: 'Statistics',
+    icon: 'heroArrowTrendingUp', // Icon from @ng-icons/core
+  }
+```
+
+### Sidebar dropdown
 
 ```
   {
@@ -121,68 +175,80 @@ Second type is **sidebar dropdown** with single items:
     type: 'dropdown',
     icon: 'heroUsers',
     children: [
-	...
+	  ...
       {
         path: ['users'],
         title: 'Users',
         icon: 'heroUsers',
       },
 	  ...
-    ],
-  },
+    ]
+  }
 ```
 
-##### Options
+### Custom content
 
-| Name            | Type      | Description                                                                                           | Default     |
-| :-------------- | :-------- | ----------------------------------------------------------------------------------------------------- | ----------- |
-| config          | `object`  | Config contains `routes` key with list of sidebar items and `title` for sidebar title if you need it. | `undefined` |
-| isSidebarClosed | `boolean` | Predefine is sidebar closed.                                                                          | `false`     |
-
-#### Responsive container
-
-If you need your sidebar to be responsive on mobile devices, you need to wrap the entire sidebar in this component
+You can add custom content instade of predefined to: small sidebar, header and footer.
+Just use ng-container element with proper name:
 
 ```
- <c-responsive-container>
- // Other sidebar components
- </c-responsive-container>
+  <c-sidebar
+    // All configuration props here...
+  >
+
+    <ng-container smallSidebar>
+      <p>Small sidebar custom content</p>
+    </ng-container>
+
+    <ng-container header>
+      <p>Header custom content</p>
+    </ng-container>
+
+    <ng-container footer>
+      <p>Footer custom content</p>
+    </ng-container>
+
+  </c-sidebar>
 ```
 
-##### Options
+### Responsive
 
-| Name           | Type     | Description                  | Default     |
-| :------------- | :------- | ---------------------------- | ----------- |
-| mobileMenuIcon | `string` | Icon for mobile burger menu. | `heroBars4` |
+If you have additional styling or change positions of burger menu button on mobile you can target class `.CMND-mobile-sidebar-btn`
 
-### Examples
-
-**Full sidebar** (`sidebar header + small sidebar + large sidebar`)
+If you want to change icon for button you can do it like this:
 
 ```
- <c-responsive-container>
-      <c-sidebar-header
-        [config]="{
-          logo: {
-				url: 'logo.png',
-				height: '50px',
-				width: 'auto',
-          },
-          collapsedLogo: {
-				url: 'small.png'
-				height: '35px',
-				width: 'auto',
-          }
-        }" />
-      <div style="display:flex;">
-        <c-small-sidebar
-          [config]="{
-            routes: smallSidebarConfig
-          }"
-          [defaultSelectedIndex]="0" />
-        <c-large-sidebar
-          [config]="largeSidebarConfig"
-          [isSidebarClosed]="isSidebarClosed" />
-      </div>
-    </c-responsive-container>
+  <c-sidebar
+    ...
+    burgerMenuIcon="heroBars4"
+    ...
+  >
+```
+
+### Colors
+
+If you want different colors you can overide this CSS variables
+
+```
+:root {
+  // Small sidebar
+  --ngx-commander-small-sidebar-background: #f5f7f9;
+  --ngx-commander-small-sidebar-active-text: #215bde;
+  --ngx-commander-small-sidebar-text: black;
+  --ngx-commander-small-sidebar-item-active-background: #e6ebef;
+  --ngx-commander-small-sidebar-item-background: #e6ebef;
+  --ngx-commander-small-sidebar-active-border: #215bde;
+  --ngx-commander-small-sidebar-font: 'Inter', sans-serif;
+
+  // Large sidebar
+  --ngx-commander-large-sidebar-background: #fff;
+  --ngx-commander-large-sidebar-icon: #9194a1;
+  --ngx-commander-large-sidebar-active-icon: #215bde;
+  --ngx-commander-large-sidebar-active-text: #215bde;
+  --ngx-commander-large-sidebar-text: #9194a1;
+  --ngx-commander-large-sidebar-item-active-background: #f0f4f6;
+  --ngx-commander-large-sidebar-item-background: #fff;
+  --ngx-commander-large-sidebar-font: 'Inter', sans-serif;
+  --ngx-commander-large-sidebar-menu-btn-color: #215bde;
+}
 ```

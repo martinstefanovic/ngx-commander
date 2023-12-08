@@ -47,6 +47,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
    * Inputs logo
    */
   @Input() logoConfig!: SidebarLogoConfig;
+  @Input() burgerMenuIcon!: string;
 
   /**
    * Inputs sidebar

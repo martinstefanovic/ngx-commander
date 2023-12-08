@@ -1,28 +1,16 @@
-import { EventEmitter } from '@angular/core';
+import { SmallSidebarConfig } from '../common/models/small-sidebar-config.model';
+import { SidebarService } from '../common/services/sidebar.service';
 import * as i0 from "@angular/core";
 export declare class SmallSidebarComponent {
-    selectItem: EventEmitter<any>;
-    toggleSidebar: EventEmitter<any>;
-    config?: {
-        routes: {
-            title: string;
-            icon: string;
-        }[];
-    };
+    private sidebarService;
+    height: any;
+    config: SmallSidebarConfig;
     defaultSelectedIndex?: number;
-    set colors(colors: any);
-    defaultColors: {
-        background: string;
-        text: string;
-        activeBackground: string;
-        activeBorder: string;
-        activeText: string;
-    };
     activeItemIndex?: number;
     isSidebarClosed: boolean;
+    constructor(sidebarService: SidebarService);
     ngOnInit(): void;
-    onSelectItem(itemIndex: number, item: any): void;
-    onSidebarToggle(): void;
+    onSelectItem(event: Event, itemIndex: number, item: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<SmallSidebarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SmallSidebarComponent, "c-small-sidebar", never, { "config": { "alias": "config"; "required": false; }; "defaultSelectedIndex": { "alias": "defaultSelectedIndex"; "required": false; }; "colors": { "alias": "colors"; "required": false; }; }, { "selectItem": "selectItem"; "toggleSidebar": "toggleSidebar"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SmallSidebarComponent, "c-small-sidebar", never, { "config": { "alias": "config"; "required": false; }; "defaultSelectedIndex": { "alias": "defaultSelectedIndex"; "required": false; }; }, {}, never, ["*"], true, never>;
 }

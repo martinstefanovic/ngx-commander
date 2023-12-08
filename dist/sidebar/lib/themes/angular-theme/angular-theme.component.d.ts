@@ -7,5 +7,5 @@ export declare class AngularThemeComponent {
     isDropdownOpened: boolean;
     onOpenDropdown(menuItem: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<AngularThemeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<AngularThemeComponent, "c-angular-theme", never, { "isSidebarClosed": { "alias": "isSidebarClosed"; "required": false; }; "config": { "alias": "config"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<AngularThemeComponent, "c-angular-theme", never, { "isSidebarClosed": { "alias": "isSidebarClosed"; "required": false; }; "config": { "alias": "config"; "required": false; }; }, {}, never, ["[header]", "[footer]"], true, never>;
 }
