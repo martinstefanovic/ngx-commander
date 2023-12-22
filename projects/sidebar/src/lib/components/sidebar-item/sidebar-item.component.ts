@@ -1,10 +1,12 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { TooltipDirective } from '../../common/ui/tooltip/tooltip.directive';
 import { NgIconsModule } from '@ng-icons/core';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { SidebarService } from '../../common/services/sidebar.service';
 import { ClickType } from '../../common/enums/click-type.enum';
 import { CommonModule } from '@angular/common';
+import { isRouteActivate } from '../../common/utils/activeRouteUtils';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar-item',
@@ -14,11 +16,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, TooltipDirective, NgIconsModule, RouterModule],
 })
-export class SidebarItemComponent {
+export class SidebarItemComponent implements OnInit, OnDestroy {
   /**
    * Private
    */
   innerWidth?: number;
+  isRouteActive = false;
+  subscriptions: Subscription[] = [];
   /**
    * Inputs
    */
@@ -30,8 +34,25 @@ export class SidebarItemComponent {
    */
   @Output() itemClick = new EventEmitter<any>();
 
-  constructor(private sidebarService: SidebarService) {
+  constructor(
+    private sidebarService: SidebarService,
+    private router: Router
+  ) {
     innerWidth = window.innerWidth;
+  }
+
+  ngOnInit(): void {
+    this.isRouteActive = isRouteActivate(this.router.url, this.item.path);
+    this.router.events.subscribe((activatedRoute) => {
+      if (activatedRoute instanceof NavigationEnd) {
+        this.isRouteActive = isRouteActivate(activatedRoute.url, this.item.path);
+        console.log(this.item.path, this.isRouteActive);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 
   onClick(event: Event, data: any) {

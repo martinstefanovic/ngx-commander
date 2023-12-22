@@ -3,7 +3,7 @@ export const SIDEBAR_ROUTES = [
     title: 'General',
   },
   {
-    path: ['statistics'],
+    path: ['products'],
     title: 'Overview',
     icon: 'heroPresentationChartBar',
     class: 'highlighted',

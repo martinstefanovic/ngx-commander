@@ -36,7 +36,7 @@
     }
     &.active {
       .item-title {
-        color: var(--main-color);
+        color: var(--ngx-commander-large-sidebar-active-text);
       }
     }
     &.closed-sidebar {

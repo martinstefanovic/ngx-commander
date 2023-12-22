@@ -26,7 +26,7 @@ Don't forget to include `NgIconsModule`. You can read more about it [here](https
 
 ### Example
 
-You can find example [here](https://github.com/martinstefanovic/ngx-commander/tree/main/projects/testing, 'here')
+You can find example [here](https://github.com/martinstefanovic/ngx-commander/tree/main/projects/testing)
 
 ```
   <c-sidebar
